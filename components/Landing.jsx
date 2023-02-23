@@ -1,10 +1,11 @@
 import { Karla } from '@next/font/google'
+import Link from 'next/link'
 import React, { useEffect, useRef } from 'react'
 import Header from './Header'
 
 const karla = Karla({ subsets: ['latin'] })
 
-const Landing = () => {
+const Landing = ({setMenuOpen}) => {
     const bubble_btn = useRef([])
 
     useEffect(() => {
@@ -31,7 +32,7 @@ const Landing = () => {
 
     return (
         <div className="landing flex flex-col">
-            <Header />
+            <Header setMenuOpen={setMenuOpen}/>
 
             <div className="landing-body h-full flex py-10 flex-col flex-1 justify-around">
                 <div className="flex justify-center">
@@ -41,7 +42,7 @@ const Landing = () => {
                     <div className="landing-video-bg p-10">
                         <div className="bubble-btns lg:block hidden relative">
                             <div className="bubble-btn text-lg absolute text-center" >
-                                <a className="bubble-text">CONTACT</a>
+                                <a href='#services' className="bubble-text">CONTACT</a>
                             </div>
                             <div className="bubble-btn text-lg absolute text-center" >
                                 <a className="bubble-text">PROJECTS</a>

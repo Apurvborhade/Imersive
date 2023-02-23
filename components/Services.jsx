@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 
@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
 
+    const serviceWrapper = useRef()
     useEffect(() => {
         // TEXT REVEAL ANIM
         gsap.from(".service-cta-text-wrapper", {
@@ -62,6 +63,17 @@ const Services = () => {
                 className: "service-image-wrapper-full",
                 ease: "none",
             })
+
+            // CURSOR
+            const cursor = document.querySelector(".cursor")
+            serviceWrapper.current.addEventListener("mousemove",() => {
+                cursor.classList.add("service")
+                cursor.innerHTML = "SERVICES"
+            })
+            serviceWrapper.current.addEventListener("mouseleave",() => {
+                cursor.classList.remove("service")
+                cursor.innerHTML = ""
+            })
         }
     }, [])
 
@@ -92,7 +104,7 @@ const Services = () => {
                     </p>
                 </div>
             </div>
-            <div className="services-body lg:flex-row flex-col flex justify-center items-center gap-12">
+            <div className="services-body lg:flex-row flex-col flex justify-center items-center gap-12" ref={serviceWrapper}>
                 <div className="service-wrapper relative">
                     <div className="service-title-overlay">
                         <p className="lg:text-2xl mb-3 text-sm">BLOCK-CHAIN SOLUTIONS</p>

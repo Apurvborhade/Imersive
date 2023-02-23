@@ -3,7 +3,7 @@ import React from 'react'
 
 import Logo from "../public/logo.png"
 
-const Header = () => {
+const Header = ({setMenuOpen}) => {
   return (
     <header className="relative w-full">
     <div className="header-wrapper flex justify-between px-1">
@@ -15,7 +15,7 @@ const Header = () => {
                 height={50}
                 />
             </div>
-            <button className="menu-btn slide-button border-l border-white/[0.3] px-10">
+            <button className="menu-btn slide-button border-l border-white/[0.3] px-10" onClick={() => setMenuOpen(true)}>
                 MENU
             </button>
         </div>
