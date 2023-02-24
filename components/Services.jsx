@@ -1,9 +1,14 @@
 import React, { useEffect, useRef } from 'react'
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const myLoader = ({ src, width, quality }) => {
+    // https://images.unsplash.com/photo-
+    return `https://images.unsplash.com/photo-${src}`
+}
 const Services = () => {
 
     const serviceWrapper = useRef()
@@ -60,7 +65,7 @@ const Services = () => {
                 },
                 backgroundColor: "#fff",
                 color: "#000",
-                borderBottomColor:"#0003"
+                borderBottomColor: "#0003"
             })
             gsap.to(".menu-btn", {
                 scrollTrigger: {
@@ -69,9 +74,9 @@ const Services = () => {
                     start: "left center",
                     toggleActions: "play none none reverse"
                 },
-                borderLeftColor:"#0003"
+                borderLeftColor: "#0003"
             })
-            
+
             // RESIZE SERVICE IMAGES
             gsap.to(".service-image-wrapper", {
                 scrollTrigger: {
@@ -86,68 +91,68 @@ const Services = () => {
 
             // CURSOR
             const cursor = document.querySelector(".cursor")
-            serviceWrapper.current.addEventListener("mousemove",() => {
+            serviceWrapper.current.addEventListener("mousemove", () => {
                 cursor.classList.add("service")
                 cursor.innerHTML = "SERVICES"
             })
-            serviceWrapper.current.addEventListener("mouseleave",() => {
+            serviceWrapper.current.addEventListener("mouseleave", () => {
                 cursor.classList.remove("service")
                 cursor.innerHTML = ""
             })
         }
         if (window.screen.width < 800) {
             gsap.to("body", {
-              scrollTrigger: {
-                trigger: ".services-body",
-                start: "top center",
-                markers: false,
-                toggleActions: "play none none reverse"
-              },
-              backgroundColor: "#fff",
-              color: "#000"
+                scrollTrigger: {
+                    trigger: ".services-body",
+                    start: "top center",
+                    markers: false,
+                    toggleActions: "play none none reverse"
+                },
+                backgroundColor: "#fff",
+                color: "#000"
             })
-          }
+        }
 
-          const serviceImages = document.querySelectorAll(".service-image-wrapper img");
-const serviceDesc = document.querySelectorAll(".service-desc");
+        const serviceImages = document.querySelectorAll(".service-image-wrapper img");
+        const serviceDesc = document.querySelectorAll(".service-desc");
 
-serviceImages.forEach((image) => {
-  const overlayText = image.parentElement.parentElement.querySelector(".service-desc");
-  const overlay = image.parentElement.parentElement.querySelector(".service-desc-overlay");
+        serviceImages.forEach((image) => {
+            const overlayText = image.parentElement.parentElement.querySelector(".service-desc");
+            const overlay = image.parentElement.parentElement.querySelector(".service-desc-overlay");
 
-  gsap.to(image, {
-    scrollTrigger: {
-      trigger: image,
+            gsap.to(image, {
+                scrollTrigger: {
+                    trigger: image,
 
-      start: "+=100px center",
+                    start: "+=100px center",
 
-    },
-    css: { width: "100%" },
-    duration: 1
-  })
-  gsap.from(overlayText, {
-    scrollTrigger: {
-      trigger: image,
+                },
+                css: { width: "100%" },
+                duration: 1
+            })
+            gsap.from(overlayText, {
+                scrollTrigger: {
+                    trigger: image,
 
-      start: "+=100px center",
+                    start: "+=100px center",
 
-    },
-    opacity: 0,
-    duration: 1,
-    delay: 0.4,
-  })
-  gsap.from(overlay, {
-    scrollTrigger: {
-      trigger: image,
+                },
+                opacity: 0,
+                duration: 1,
+                delay: 0.4,
+            })
+            gsap.from(overlay, {
+                scrollTrigger: {
+                    trigger: image,
 
-      start: "+=100px center",
+                    start: "+=100px center",
 
-    },
-    opacity: 0,
-    duration: 1,
-    delay: 0.7,
-  })
-})
+                },
+                opacity: 0,
+                duration: 1,
+                delay: 0.7,
+            })
+        })
     }, [])
 
     return (
@@ -184,7 +189,13 @@ serviceImages.forEach((image) => {
                     </div>
                     <div className="relative service-">
                         <div className="service-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1666816943035-15c29931e975?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80" alt="" id="service-image" />
+                            <Image
+                                loader={myLoader}
+                                src="1666816943035-15c29931e975?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80"
+                                alt="Block chain solutions"
+                                width={500}
+                                height={500}
+                            />
                         </div>
                         <div
                             className="service-desc-overlay absolute text-white text-center w-full h-full flex justify-center items-center top-0 bg-black/[.5]">
@@ -202,7 +213,13 @@ serviceImages.forEach((image) => {
                     </div>
                     <div className="relative service-">
                         <div className="service-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=878&q=80" alt="" id="service-image" />
+                            <Image
+                                loader={myLoader}
+                                src="1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=878&q=80"
+                                alt="Augmented Reality"
+                                width={500}
+                                height={500}
+                            />
                         </div>
                         <div
                             className="service-desc-overlay absolute text-white text-center w-full h-full flex justify-center items-center top-0 bg-black/[.5]">
@@ -218,7 +235,13 @@ serviceImages.forEach((image) => {
                     </div>
                     <div className="relative service-">
                         <div className="service-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1673427147403-9e87c4fe8a26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1228&q=80" alt="" id="service-image" />
+                            <Image
+                                loader={myLoader}
+                                src="1673427147403-9e87c4fe8a26?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1228&q=80"
+                                alt="Smart Contract Development"
+                                width={500}
+                                height={500}
+                            />
                         </div>
                         <div
                             className="service-desc-overlay absolute text-white text-center w-full h-full flex justify-center items-center top-0 bg-black/[.5]">
