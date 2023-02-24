@@ -1,4 +1,5 @@
 import gsap from 'gsap';
+import Link from 'next/link';
 import React, { useEffect, useRef } from 'react'
 
 
@@ -35,21 +36,21 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
                         <div  className="menu-link" data-scroll="#about">
                            
                             <div  className="flex flex-col gap-10" onClick={() => setMenuOpen(false)}>
-                                <a className="text-center">ABOUT</a>
-                                <a className="text-center" href='#services'>ABOUT</a>
+                                <Link className="text-center" href="/#about">ABOUT</Link>
+                                <Link className="text-center" href='/#about'>ABOUT</Link>
                             </div>
                             
                         </div>
                         <div className="menu-link" data-scroll="#footer">
                             <div className="flex flex-col gap-10" onClick={() => setMenuOpen(false)}>
-                                <a className="text-center">CONTACT</a>
-                                <a className="text-center" href='#services'>CONTACT</a>
+                                <Link className="text-center" href='/contact'>CONTACT</Link>
+                                <Link className="text-center" href='/contact'>CONTACT</Link>
                             </div>
                         </div>
                         <div className="menu-link" data-scroll="#about">
                             <div className="flex flex-col gap-10" onClick={() => setMenuOpen(false)}>
-                                <a className="text-center">PROJECTS</a>
-                                <a className="text-center" href='#services'>PROJECTS</a>
+                                <Link className="text-center" href="/">PROJECTS</Link>
+                                <Link className="text-center" href='/'>PROJECTS</Link>
                             </div>
                         </div>
 

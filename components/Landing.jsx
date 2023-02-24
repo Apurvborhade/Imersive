@@ -41,15 +41,21 @@ const Landing = ({setMenuOpen}) => {
                 <div className="flex justify-center">
                     <div className="landing-video-bg p-10">
                         <div className="bubble-btns lg:block hidden relative">
-                            <div className="bubble-btn text-lg absolute text-center" >
-                                <a href='#services' className="bubble-text">CONTACT</a>
-                            </div>
-                            <div className="bubble-btn text-lg absolute text-center" >
-                                <a className="bubble-text">PROJECTS</a>
-                            </div>
-                            <div className="bubble-btn text-lg absolute text-center" >
-                                <a className="bubble-text">ABOUT</a>
-                            </div>
+                            <Link href={"/contact"} className="bubble-btn text-lg absolute text-center" >
+                                <p>
+                                    CONTACT
+                                </p>
+                            </Link>
+                            <Link href={"/"} className="bubble-btn text-lg absolute text-center" >
+                                <p>
+                                    PROJECTS
+                                </p>
+                            </Link>
+                            <Link href={"/#about"} className="bubble-btn text-lg absolute text-center" >
+                                <p>
+                                    ABOUT
+                                </p>
+                            </Link>
                         </div>
                         {/* <img src="./assets/Final Output V2_Moment.jpg" alt="">  */}
                         <video src="https://vimeo.com/api/oembed.json?url=https://vimeo.com/798898118&autoplay=1" autoPlay muted id="landing-video"></video>
