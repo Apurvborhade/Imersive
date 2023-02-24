@@ -15,13 +15,13 @@ export default function App({ Component, pageProps }) {
               background-color:"#fff";
               font-family: ${orbitron.style.fontFamily};
             }
-            .landing-brand-desc,.services-tagline,.service-desc,.card-overlay p {
+            .landing-brand-desc,.services-tagline,.service-desc,.card-overlay p,.team-role-text,.phase-desc {
               font-family: ${karla.style.fontFamily};
             }
             .contact-mail,.close-btn-menu {
               font-family: ${poppins.style.fontFamily};
             }
-            .footer-cta h2 ,.footer-cta p {
+            .footer-cta h2 ,.footer-cta p,.contact-form {
               font-family: ${poppins.style.fontFamily};
             }
         `}</style>

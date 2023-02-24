@@ -23,7 +23,7 @@ const Services = () => {
             rotation: 45, transformOrigin: "left 100%"
         });
 
-        if (window.screen.width > 800) {
+        if (window.screen.width > 1200) {
             // SLIDE SERVICES
             const tweenanim = gsap.to("#services", {
                 scrollTrigger: {
@@ -51,7 +51,27 @@ const Services = () => {
                 backgroundColor: "#fff",
                 color: "#000"
             })
-
+            gsap.to("header", {
+                scrollTrigger: {
+                    containerAnimation: tweenanim,
+                    trigger: ".services-body",
+                    start: "left center",
+                    toggleActions: "play none none reverse"
+                },
+                backgroundColor: "#fff",
+                color: "#000",
+                borderBottomColor:"#0003"
+            })
+            gsap.to(".menu-btn", {
+                scrollTrigger: {
+                    containerAnimation: tweenanim,
+                    trigger: ".services-body",
+                    start: "left center",
+                    toggleActions: "play none none reverse"
+                },
+                borderLeftColor:"#0003"
+            })
+            
             // RESIZE SERVICE IMAGES
             gsap.to(".service-image-wrapper", {
                 scrollTrigger: {
@@ -75,6 +95,59 @@ const Services = () => {
                 cursor.innerHTML = ""
             })
         }
+        if (window.screen.width < 800) {
+            gsap.to("body", {
+              scrollTrigger: {
+                trigger: ".services-body",
+                start: "top center",
+                markers: false,
+                toggleActions: "play none none reverse"
+              },
+              backgroundColor: "#fff",
+              color: "#000"
+            })
+          }
+
+          const serviceImages = document.querySelectorAll(".service-image-wrapper img");
+const serviceDesc = document.querySelectorAll(".service-desc");
+
+serviceImages.forEach((image) => {
+  const overlayText = image.parentElement.parentElement.querySelector(".service-desc");
+  const overlay = image.parentElement.parentElement.querySelector(".service-desc-overlay");
+
+  gsap.to(image, {
+    scrollTrigger: {
+      trigger: image,
+
+      start: "+=100px center",
+
+    },
+    css: { width: "100%" },
+    duration: 1
+  })
+  gsap.from(overlayText, {
+    scrollTrigger: {
+      trigger: image,
+
+      start: "+=100px center",
+
+    },
+    opacity: 0,
+    duration: 1,
+    delay: 0.4,
+  })
+  gsap.from(overlay, {
+    scrollTrigger: {
+      trigger: image,
+
+      start: "+=100px center",
+
+    },
+    opacity: 0,
+    duration: 1,
+    delay: 0.7,
+  })
+})
     }, [])
 
     return (
@@ -83,7 +156,7 @@ const Services = () => {
                 <div className="service-title w-full mt-5 lg:mr-16">
                     <p className="text-end test-text">{`{what we do}`}</p>
                 </div>
-                <div className="services-tagline-wrapper flex flex-col relative">
+                <div className="services-tagline-wrapper mb-20 lg:mb-0 flex flex-col relative">
                     <div className="layout-circle absolute"></div>
                     <div className="overflow-hidden">
                         <div className="service-cta-text-wrapper">

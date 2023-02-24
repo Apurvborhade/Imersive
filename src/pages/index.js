@@ -10,6 +10,7 @@ import Footer from 'components/Footer'
 import { useEffect, useState } from 'react'
 import Lenis from '@studio-freight/lenis'
 import Menu from 'components/Menu'
+import Header from 'components/Header'
 
 
 export default function Home() {

@@ -22,16 +22,16 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
     }, [])
 
     return (
-        <div className={`menu-wrapper ${menuOpen ? 'active' : ''} `} ref={menu}>
+        <div className={`menu-wrapper  ${menuOpen ? 'active' : ''} `} ref={menu}>
             <div className="close-btn flex justify-between">
                 <h1 className={`text-3xl p-10 `}>IMERSIVE</h1>
-                <button className="close-btn-menu lg:p-10" onClick={() => setMenuOpen(false)}>CLOSE</button>
+                <button className="close-btn-menu p-10" onClick={() => setMenuOpen(false)}>CLOSE</button>
             </div>
 
             <div className="menu-body grid grid-cols-1 h-full">
 
-                <div className="menu-navigation flex flex-col justify-around h-full">
-                    <ul className="lg:text-9xl text-2xl flex flex-col lg:gap-16 lg:flex-1 px-16 lg:p-32">
+                <div className="menu-navigation flex flex-col justify-around h-full pb-20">
+                    <ul className="lg:text-9xl text-4xl flex flex-col lg:gap-16 gap-10 lg:flex-1 lg:px-16 lg:p-32">
                         <div  className="menu-link" data-scroll="#about">
                            
                             <div  className="flex flex-col gap-10" onClick={() => setMenuOpen(false)}>

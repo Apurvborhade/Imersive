@@ -13,87 +13,85 @@ const Team = () => {
         </div>
 
         <div className="team-members-wrapper relative my-10 grid lg:grid-cols-6 grid-cols-2 gap-5">
-            <div data-content="SHRYASH"  className="member-card card-lg relative col-span-2">
-                <div className="team-member-dets">
-                    <p className="bg-white w-full px-5 py-2">Test Name</p>
+            <div className='member-card col-span-2'>
+                <div className='image-wrapper rounded-lg overflow-hidden'>
+                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=878&q=80" alt="" id="service-image" />
                 </div>
-                <div className="card-overlay">
-                    <p className="text-xl p-10">Founder At Imersive</p>
-                </div>
-                <div className="member-image-wrapper relative overflow-hidden rounded-lg">
-                    <img src="./assets/nft.jpg" alt="" />
+                <div className='mt-5'>
+                    <p className='text-xl font-bold'>SHRYSH</p>
+                    <p className='team-role-text'>Founder At Imersive</p>
                 </div>
             </div>
-            <div data-content="Apurv"  className="member-card card-lg relative col-span-2">
-                
-                <div className="card-overlay">
-                    <p className="text-xl p-10">Founder At Imersive</p>
+            <div className='member-card col-span-2'>
+                <div className='image-wrapper rounded-lg overflow-hidden'>
+                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=878&q=80" alt="" id="service-image" />
                 </div>
-                <div className="member-image-wrapper relative overflow-hidden rounded-lg">
-                    <img src="./assets/nft.jpg" alt="" />
-                </div>
-            </div>
-            <div data-content="SHRYASH"  className="member-card card-lg relative col-span-2">
-                
-                <div className="card-overlay">
-                    <p className="text-xl p-10">Founder At Imersive</p>
-                </div>
-                <div className="member-image-wrapper relative overflow-hidden rounded-lg">
-                    <img src="./assets/nft.jpg" alt="" />
+                <div className='mt-5'>
+                    <p className='text-xl font-bold'>SHRYSH</p>
+                    <p className='team-role-text'>Founder At Imersive</p>
                 </div>
             </div>
-            <div data-content="SHRYASH"  className="member-card card-sm relative">
-                
-                <div className="card-overlay">
-                    <p className="text-xl p-10">Founder At Imersive</p>
+            <div className='member-card col-span-2'>
+                <div className='image-wrapper rounded-lg overflow-hidden'>
+                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=878&q=80" alt="" id="service-image" />
                 </div>
-                <div className="member-image-wrapper relative overflow-hidden rounded-lg">
-                    <img src="./assets/nft.jpg" alt="" />
-                </div>
-            </div>
-            <div data-content="SHRYASH"  className="member-card card-sm relative">
-                
-                <div className="card-overlay">
-                    <p className="text-xl p-10">Founder At Imersive</p>
-                </div>
-                <div className="member-image-wrapper relative overflow-hidden rounded-lg">
-                    <img src="./assets/nft.jpg" alt="" />
+                <div className='mt-5'>
+                    <p className='text-xl font-bold'>SHRYSH</p>
+                    <p className='team-role-text'>Founder At Imersive</p>
                 </div>
             </div>
-            <div data-content="SHRYASH"  className="member-card card-sm relative">
-                
-                <div className="card-overlay">
-                    <p className="text-xl p-10">Founder At Imersive</p>
+            <div className='member-card'>
+                <div className='image-wrapper rounded-lg overflow-hidden'>
+                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=878&q=80" alt="" id="service-image" />
                 </div>
-                <div className="member-image-wrapper relative overflow-hidden rounded-lg">
-                    <img src="./assets/nft.jpg" alt="" />
-                </div>
-            </div>
-            <div data-content="SHRYASH"  className="member-card card-sm relative">
-                
-                <div className="card-overlay">
-                    <p className="text-xl p-10">Founder At Imersive</p>
-                </div>
-                <div className="member-image-wrapper relative overflow-hidden rounded-lg">
-                    <img src="./assets/nft.jpg" alt="" />
+                <div className='mt-5'>
+                    <p className='text-xl font-bold'>SHRYSH</p>
+                    <p className='team-role-text'>Founder At Imersive</p>
                 </div>
             </div>
-            <div data-content="SHRYASH"  className="member-card card-sm relative">
-                
-                <div className="card-overlay">
-                    <p className="text-xl p-10">Founder At Imersive</p>
+            <div className='member-card'>
+                <div className='image-wrapper rounded-lg overflow-hidden'>
+                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=878&q=80" alt="" id="service-image" />
                 </div>
-                <div className="member-image-wrapper relative overflow-hidden rounded-lg">
-                    <img src="./assets/nft.jpg" alt="" />
+                <div className='mt-5'>
+                    <p className='text-xl font-bold'>SHRYSH</p>
+                    <p className='team-role-text'>Founder At Imersive</p>
                 </div>
             </div>
-            <div  data-content="SHRYASH" className="member-card card-sm relative">
-                
-                <div className="card-overlay">
-                    <p className="text-xl p-10">Founder At Imersive</p>
+            <div className='member-card'>
+                <div className='image-wrapper rounded-lg overflow-hidden'>
+                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=878&q=80" alt="" id="service-image" />
                 </div>
-                <div className="member-image-wrapper relative overflow-hidden rounded-lg">
-                    <img src="./assets/nft.jpg" alt="" />
+                <div className='mt-5'>
+                    <p className='text-xl font-bold'>SHRYSH</p>
+                    <p className='team-role-text'>Founder At Imersive</p>
+                </div>
+            </div>
+            <div className='member-card'>
+                <div className='image-wrapper rounded-lg overflow-hidden'>
+                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=878&q=80" alt="" id="service-image" />
+                </div>
+                <div className='mt-5'>
+                    <p className='text-xl font-bold'>SHRYSH</p>
+                    <p className='team-role-text'>Founder At Imersive</p>
+                </div>
+            </div>
+            <div className='member-card'>
+                <div className='image-wrapper rounded-lg overflow-hidden'>
+                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=878&q=80" alt="" id="service-image" />
+                </div>
+                <div className='mt-5'>
+                    <p className='text-xl font-bold'>SHRYSH</p>
+                    <p className='team-role-text'>Founder At Imersive</p>
+                </div>
+            </div>
+            <div className='member-card'>
+                <div className='image-wrapper rounded-lg overflow-hidden'>
+                    <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=878&q=80" alt="" id="service-image" />
+                </div>
+                <div className='mt-5'>
+                    <p className='text-xl font-bold'>SHRYSH</p>
+                    <p className='team-role-text'>Founder At Imersive</p>
                 </div>
             </div>
         </div>

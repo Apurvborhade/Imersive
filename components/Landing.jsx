@@ -34,7 +34,7 @@ const Landing = ({setMenuOpen}) => {
         <div className="landing flex flex-col">
             <Header setMenuOpen={setMenuOpen}/>
 
-            <div className="landing-body h-full flex py-10 flex-col flex-1 justify-around">
+            <div className="landing-body mt-20 h-full flex py-10 flex-col flex-1 justify-around">
                 <div className="flex justify-center">
                     <h1 className="text-center lg:text-9xl text-3xl landing-brand-text">IMERSIVE</h1>
                 </div>
@@ -51,8 +51,8 @@ const Landing = ({setMenuOpen}) => {
                                 <a className="bubble-text">ABOUT</a>
                             </div>
                         </div>
-                        {/* <!-- <img src="./assets/Final Output V2_Moment.jpg" alt=""> --> */}
-                        {/* <video src="./assets/Final Output V2.mp4" autoplay muted id="landing-video"></video> */}
+                        {/* <img src="./assets/Final Output V2_Moment.jpg" alt="">  */}
+                        <video src="https://vimeo.com/api/oembed.json?url=https://vimeo.com/798898118&autoplay=1" autoPlay muted id="landing-video"></video>
                     </div>
                 </div>
                 <p className={`landing-brand-desc text-lg lg:ml-20 text-center lg:text-left px-10 lg:px-0 ${karla.className} font-light`}>We help you navigate new frontiers in customer engagement. At Immerse, we build immersive virtual experiences that connect with audiences that matter the most to your business.</p>
