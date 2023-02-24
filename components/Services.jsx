@@ -224,7 +224,7 @@ const Services = () => {
                         <div
                             className="service-desc-overlay absolute text-white text-center w-full h-full flex justify-center items-center top-0 bg-black/[.5]">
                             <p className="service-desc lg:text-lg text-sm">
-                                Imersive's Augmented Reality and Social AR solutions provide innovative ways to boost brand engagement and create dynamic, interactive experiences that captivate audiences.
+                                Imersive'&apos;s Augmented Reality and Social AR solutions provide innovative ways to boost brand engagement and create dynamic, interactive experiences that captivate audiences.
                             </p>
                         </div>
                     </div>

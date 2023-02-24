@@ -1,6 +1,7 @@
 import Header from 'components/Header'
 import Menu from 'components/Menu'
 import { sendContactForm } from 'lib/api'
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -94,9 +95,9 @@ const Contact = () => {
                 <div className=' relative flex mt-20 justify-center items-center h-full py-3 '>
                     <div className='contact-form-wrapper grid lg:grid-cols-2 grid-cols-1 gap-20 lg:p-20 p-10'>
                         <div className='contact-cta lg:border-r lg:border-b-0 border-b text-black flex flex-col lg:justify-around justify-center lg:pr-20'>
-                            <h3 className='lg:text-6xl text-lg w-96'>LET'S CONNECT TOGETHER</h3>
+                            <h3 className='lg:text-6xl text-lg w-96'>LET&apos;S CONNECT TOGETHER</h3>
                             <div className='back-link lg:flex w-60 bg-black h-60 rounded-full flex ml-auto hidden justify-center items-center text-white'>
-                                <a href='/'>GO BACK HOME</a>
+                                <Link href='/'>GO BACK HOME</Link>
                             </div>
                         </div>
 

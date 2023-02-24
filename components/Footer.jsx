@@ -1,4 +1,5 @@
 import React from 'react'
+import { BsInstagram } from 'react-icons/bs';
 
 const Footer = () => {
   return (
@@ -12,10 +13,10 @@ const Footer = () => {
         <div className="socials flex justify-end pb-5">
           <div className="flex gap-2">
             <div className="instagram social-btn border border-black/[.2] p-4 rounded-full">
-              <img src="./assets/discord.png" alt="" width="30px" height="30px" />
+              <BsInstagram />
             </div>
             <div className="instagram social-btn border border-black/[.2] p-4 rounded-full">
-              <img src="./assets/discord.png" alt="" width="30px" height="30px" />
+              <BsInstagram />
             </div>
 
           </div>

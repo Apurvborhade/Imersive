@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 const myLoader = ({ src }) => {
     // https://images.unsplash.com/photo-
@@ -6,14 +7,15 @@ const myLoader = ({ src }) => {
 }
 const Team = () => {
     return (
+        
         <section className="team-wrapper relative mt-52 lg:px-52 px-10 py-10">
             <div className="team-section-header">
                 <div className="heading">
                     <p className="section-title">OUR PEOPLE</p>
                     <p className="text-4xl my-5">AT THE FOREFRONT OF VIRTUAL EXPERIENCE TECH</p>
-                    <a href="/">
+                    <Link href="/">
                         <button className="join-team-btn slide-button light border px-10 py-3 border-black/[0.4]">Join Our Team</button>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="team-members-wrapper relative my-10 grid lg:grid-cols-6 grid-cols-2 gap-5">
