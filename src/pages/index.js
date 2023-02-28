@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react'
 import Lenis from '@studio-freight/lenis'
 import Menu from 'components/Menu'
 import Header from 'components/Header'
+import Projects from 'components/Projects'
 
 
 export default function Home() {
@@ -72,6 +73,7 @@ export default function Home() {
         <Landing setMenuOpen={setMenuOpen}/>
         <Services />
         <Roadmap />
+        <Projects />
         <Team />
         <Footer />
       </div>

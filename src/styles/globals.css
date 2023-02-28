@@ -428,3 +428,13 @@ footer {
     transform: rotate(360deg);
   }
 }
+
+
+/* PROJECTS */
+.projects-wrapper {
+  height: 100vh;
+}
+
+.projects-info {
+  width: 50%;
+}
