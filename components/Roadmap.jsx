@@ -86,7 +86,7 @@ const Roadmap = () => {
                     <div className="roadmap-phase relative">
                         <div className="phase-title absolute -top-12 left-12 flex">
                             <p className="w-32 rotu">OPTIMIZE</p>
-                            <p className=" phase-desc  text-sm text-black/[.3] w-96 absolute -top-10 left-40 hidden lg:block rotu">We work with you to continuously optimise the customer's experience while making sure that the brand story always remains relevant and up-to-date.</p>
+                            <p className=" phase-desc  text-sm text-black/[.3] w-96 absolute -top-10 left-40 hidden lg:block rotu">We work with you to continuously optimise the customer&apos;s experience while making sure that the brand story always remains relevant and up-to-date.</p>
                         </div>
 
                         <div className="phase-btn">
