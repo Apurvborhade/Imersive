@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 import { BsInstagram } from 'react-icons/bs';
 
@@ -23,10 +24,10 @@ const Footer = () => {
         </div>
         <div className="navigation-links border-t border-black/[.2]">
           <ul className="flex py-10 justify-center ">
-            <li className="mx-4"><a href="" className="footer-links">Home</a></li>
-            <li className="mx-4"><a href="" className="footer-links">Home</a></li>
-            <li className="mx-4"><a href="" className="footer-links">Home</a></li>
-            <li className="mx-4"><a href="" className="footer-links">Home</a></li>
+            <li className="mx-4"><Link href="/" className="footer-links">Home</Link></li>
+            <li className="mx-4"><Link href="/" className="footer-links">Home</Link></li>
+            <li className="mx-4"><Link href="/" className="footer-links">Home</Link></li>
+            <li className="mx-4"><Link href="/" className="footer-links">Home</Link></li>
           </ul>
         </div>
       </div>

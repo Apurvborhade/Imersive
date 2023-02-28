@@ -22,6 +22,9 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
         })
     }, [])
 
+   
+
+
     return (
         <div className={`menu-wrapper  ${menuOpen ? 'active' : ''} `} ref={menu}>
             <div className="close-btn flex justify-between">
@@ -32,14 +35,14 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
             <div className="menu-body grid grid-cols-1 h-full">
 
                 <div className="menu-navigation flex flex-col justify-around h-full pb-20">
-                    <ul className="lg:text-9xl text-4xl flex flex-col lg:gap-16 gap-10 lg:flex-1 lg:px-16 lg:p-32">
-                        <div  className="menu-link" data-scroll="#about">
-                           
-                            <div  className="flex flex-col gap-10" onClick={() => setMenuOpen(false)}>
+                    <div className="lg:text-9xl text-4xl flex flex-col lg:gap-16 gap-10 lg:flex-1 lg:px-16 lg:p-32">
+                        <div className="menu-link" data-scroll="#about">
+
+                            <div className="flex flex-col gap-10" onClick={() => setMenuOpen(false)}>
                                 <Link className="text-center" href="/#about">ABOUT</Link>
                                 <Link className="text-center" href='/#about'>ABOUT</Link>
                             </div>
-                            
+
                         </div>
                         <div className="menu-link" data-scroll="#footer">
                             <div className="flex flex-col gap-10" onClick={() => setMenuOpen(false)}>
@@ -54,7 +57,7 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
                             </div>
                         </div>
 
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>

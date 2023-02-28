@@ -88,10 +88,13 @@ header {
   width: 1300px; 
   height:550px;
 }
-.landing-video-bg video,.landing-video-bg img,.landing-video-bg iframe{
+.landing-video-bg video,.landing-video-bg img,.landing-video-bg iframe,#player{
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+#player {
+  max-width: 100% !important;
 }
 /* LANDING */
 
@@ -229,7 +232,7 @@ object-fit: cover;
 }
 
 .bar {
-  width: 1px;
+  width: 0.3px;
   min-height: 100%;
   background: #0003;
 }
@@ -252,6 +255,7 @@ object-fit: cover;
 /* Roadmap */
   .phase-desc {
     font-size: 1.1rem;
+    font-weight: 300;
   }
 /* WORKS */
 

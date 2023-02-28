@@ -30,7 +30,7 @@ const Team = () => {
                             />
                         </div>
                         <div className='mt-5'>
-                            <p className='text-xl font-bold'>SHRYSH</p>
+                            <p className='text-xl font-medium'>SHRYSH</p>
                             <p className='team-role-text'>Founder At Imersive</p>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ const Team = () => {
                             />
                         </div>
                         <div className='mt-5'>
-                            <p className='text-xl font-bold'>SHRYSH</p>
+                            <p className='text-xl font-medium'>SHRYSH</p>
                             <p className='team-role-text'>Founder At Imersive</p>
                         </div>
                     </div>
@@ -60,7 +60,7 @@ const Team = () => {
                             />
                         </div>
                         <div className='mt-5'>
-                            <p className='text-xl font-bold'>SHRYSH</p>
+                            <p className='text-xl font-medium'>SHRYSH</p>
                             <p className='team-role-text'>Founder At Imersive</p>
                         </div>
                     </div>
@@ -75,7 +75,7 @@ const Team = () => {
                             />
                         </div>
                         <div className='mt-5'>
-                            <p className='text-xl font-bold'>SHRYSH</p>
+                            <p className='text-xl font-medium'>SHRYSH</p>
                             <p className='team-role-text'>Founder At Imersive</p>
                         </div>
                     </div>
@@ -90,7 +90,7 @@ const Team = () => {
                             />
                         </div>
                         <div className='mt-5'>
-                            <p className='text-xl font-bold'>SHRYSH</p>
+                            <p className='text-xl font-medium'>SHRYSH</p>
                             <p className='team-role-text'>Founder At Imersive</p>
                         </div>
                     </div>
@@ -105,7 +105,7 @@ const Team = () => {
                             />
                         </div>
                         <div className='mt-5'>
-                            <p className='text-xl font-bold'>SHRYSH</p>
+                            <p className='text-xl font-medium'>SHRYSH</p>
                             <p className='team-role-text'>Founder At Imersive</p>
                         </div>
                     </div>
@@ -120,7 +120,7 @@ const Team = () => {
                             />
                         </div>
                         <div className='mt-5'>
-                            <p className='text-xl font-bold'>SHRYSH</p>
+                            <p className='text-xl font-medium'>SHRYSH</p>
                             <p className='team-role-text'>Founder At Imersive</p>
                         </div>
                     </div>
@@ -135,7 +135,7 @@ const Team = () => {
                             />
                         </div>
                         <div className='mt-5'>
-                            <p className='text-xl font-bold'>SHRYSH</p>
+                            <p className='text-xl font-medium'>SHRYSH</p>
                             <p className='team-role-text'>Founder At Imersive</p>
                         </div>
                     </div>
@@ -150,7 +150,7 @@ const Team = () => {
                             />
                         </div>
                         <div className='mt-5'>
-                            <p className='text-xl font-bold'>SHRYSH</p>
+                            <p className='text-xl font-medium'>SHRYSH</p>
                             <p className='team-role-text'>Founder At Imersive</p>
                         </div>
                     </div>
