@@ -12,6 +12,7 @@ import Lenis from '@studio-freight/lenis'
 import Menu from 'components/Menu'
 import Header from 'components/Header'
 import Projects from 'components/Projects'
+import Loading from 'components/Loading'
 
 
 export default function Home() {
@@ -57,8 +58,9 @@ export default function Home() {
         cursor.classList.remove("cursor-click");
       }, 100);
     });
-  },[])
+  }, [])
 
+ 
   return (
     <>
       <Head>
@@ -68,9 +70,9 @@ export default function Home() {
         <link rel="icon" href="/logo.png" />
       </Head>
       <div className='cursor'></div>
-      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <div className={`page-wrapper`}>
-        <Landing setMenuOpen={setMenuOpen}/>
+        <Landing setMenuOpen={setMenuOpen} />
         <Services />
         <Roadmap />
         <Projects />

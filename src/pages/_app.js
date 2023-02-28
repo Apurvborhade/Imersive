@@ -1,16 +1,35 @@
 import '@/styles/globals.css'
 import '@/styles/responsive.css'
-import { Orbitron,Poppins,Karla } from '@next/font/google'
+import { Orbitron, Poppins, Karla } from '@next/font/google'
+import Loading from 'components/Loading'
+import { useEffect, useState } from 'react'
 
 const orbitron = Orbitron({ subsets: ['latin'] })
-const poppins = Poppins({ subsets: ['latin'],weight:'100' })
+const poppins = Poppins({ subsets: ['latin'], weight: '100' })
 const karla = Karla({ subsets: ['latin'] })
 
 export default function App({ Component, pageProps }) {
- 
+  const [loading, setLoading] = useState(true);
+
+  
+
+  useEffect(() => {
+    const onPageLoad = () => {
+      setLoading(false)
+    };
+
+    // Check if the page has already loaded
+    if (document.readyState === 'complete') {
+      onPageLoad();
+    } else {
+      window.addEventListener('load', onPageLoad);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener('load', onPageLoad);
+    }
+  }, []);
   return (
     <>
-        <style jsx global>{`
+      <style jsx global>{`
             * {
               background-color:"#fff";
               font-family: ${orbitron.style.fontFamily};
@@ -25,7 +44,11 @@ export default function App({ Component, pageProps }) {
               font-family: ${poppins.style.fontFamily};
             }
         `}</style>
-      <Component {...pageProps} />
+      {!loading ? (
+        <Component {...pageProps} />
+      ) : (
+        <Loading />
+      )}
     </>
   )
 }

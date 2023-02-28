@@ -57,7 +57,7 @@ const Landing = ({ setMenuOpen }) => {
                                 </p>
                             </Link>
                         </div>
-                        <video src="/landing.mp4" autoPlay muted id="landing-video"></video>
+                        <video src="/landing.mp4" autoPlay muted id="landing-video" controlsList="nodownload"></video>
                         {/* <iframe className='pointer-events-none' src="https://player.vimeo.com/video/798898118?h=4d5c51ab46&autoplay=1&loop=1&title=0&byline=0&portrait=0&sidedock=0&transparent=0&muted=1" width="1200" height="675" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> */}
                     </div>
                 </div>
