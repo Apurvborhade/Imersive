@@ -23,11 +23,11 @@ const Footer = () => {
           </div>
         </div>
         <div className="navigation-links border-t border-black/[.2]">
-          <ul className="flex py-10 justify-center ">
+          <ul className="flex py-10 justify-start ">
             <li className="mx-4"><Link href="/" className="footer-links">Home</Link></li>
-            <li className="mx-4"><Link href="/" className="footer-links">Home</Link></li>
-            <li className="mx-4"><Link href="/" className="footer-links">Home</Link></li>
-            <li className="mx-4"><Link href="/" className="footer-links">Home</Link></li>
+            <li className="mx-4"><Link href="/" className="footer-links">Projects</Link></li>
+            <li className="mx-4"><Link href="/" className="footer-links">Contact</Link></li>
+            <li className="mx-4"><Link href="/" className="footer-links">About</Link></li>
           </ul>
         </div>
       </div>
