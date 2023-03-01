@@ -344,8 +344,9 @@ footer {
 .slide-button.light {
   position: relative;
   background: none;
-  color: black;
+  color: #fff;
   overflow: hidden;
+  border-color: #fff;
   transition: all 0.3s ease;
 }
 
@@ -356,13 +357,13 @@ footer {
   left: 0;
   width: 100%;
   height: 0%;
-  background-color: black;
+  background-color: #fff;
   transition: all 0.3s ease;
   z-index: -1;
 }
 
 .slide-button.light:hover {
-  color: white;
+  color: black;
 }
 
 .slide-button.light:hover:before {
@@ -438,6 +439,10 @@ footer {
 
 .projects-info {
   width: 50%;
+}
+
+.join-team-btn {
+  mix-blend-mode: difference;
 }
 
 /* Loader */
