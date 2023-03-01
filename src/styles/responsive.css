@@ -27,6 +27,7 @@
     #service-cta-text {
         font-size: 4rem;
     }
+    
 }
 
 @media only screen and (max-width: 1700px) {
@@ -60,6 +61,12 @@
     #service-cta-text {
         font-size: 2rem;
     }
+    .projects-wrapper {
+        height: auto;
+      }
+      .projects-info {
+        width: 100%;
+      }
     .menu-link {
         height: 60px;
         letter-spacing: 0.8rem;
