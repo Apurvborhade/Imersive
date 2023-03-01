@@ -24,7 +24,7 @@ const Projects = () => {
     }, [])
 
     return (
-        <div className='projects-wrapper grid grid-cols-2 lg:mt-36 relative'>
+        <div className='projects-wrapper grid grid-cols-2 lg:mt-36 relative' id='projects'>
             <div className=' items-center projects p-10 flex flex-col gap-2'>
             <video src="/landing.mp4" autoPlay muted id="landing-video"></video>
             <video src="/landing.mp4" autoPlay muted id="landing-video"></video>

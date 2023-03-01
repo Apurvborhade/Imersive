@@ -46,7 +46,7 @@ const Landing = ({ setMenuOpen }) => {
                                     CONTACT
                                 </p>
                             </Link>
-                            <Link href={"/"} className="bubble-btn text-lg absolute text-center" >
+                            <Link href={"/#projects"} className="bubble-btn text-lg absolute text-center" >
                                 <p>
                                     PROJECTS
                                 </p>

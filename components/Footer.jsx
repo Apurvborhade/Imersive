@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react'
-import { BsInstagram } from 'react-icons/bs';
+import { BsInstagram, BsTwitter } from 'react-icons/bs';
 
 const Footer = () => {
   return (
@@ -13,21 +13,21 @@ const Footer = () => {
       <div className="footer-navigation px-10 ">
         <div className="socials flex justify-end pb-5">
           <div className="flex gap-2">
-            <div className="instagram social-btn border border-black/[.2] p-4 rounded-full">
+            <Link href={"https://www.instagram.com/masfashion_nft/"} target="_blank" className="instagram social-btn border border-black/[.2] p-4 rounded-full">
               <BsInstagram />
-            </div>
-            <div className="instagram social-btn border border-black/[.2] p-4 rounded-full">
-              <BsInstagram />
-            </div>
+            </Link>
+            <Link href={"https://twitter.com/masfashion_nft"} target="_blank" className="instagram social-btn border border-black/[.2] p-4 rounded-full">
+              <BsTwitter />
+            </Link>
 
           </div>
         </div>
         <div className="navigation-links border-t border-black/[.2]">
           <ul className="flex py-10 justify-start ">
             <li className="mx-4"><Link href="/" className="footer-links">Home</Link></li>
-            <li className="mx-4"><Link href="/" className="footer-links">Projects</Link></li>
-            <li className="mx-4"><Link href="/" className="footer-links">Contact</Link></li>
-            <li className="mx-4"><Link href="/" className="footer-links">About</Link></li>
+            <li className="mx-4"><Link href="/#projects" className="footer-links">Projects</Link></li>
+            <li className="mx-4"><Link href="/contact" className="footer-links">Contact</Link></li>
+            <li className="mx-4"><Link href="/#about" className="footer-links">About</Link></li>
           </ul>
         </div>
       </div>

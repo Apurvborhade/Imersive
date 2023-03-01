@@ -318,6 +318,7 @@ footer {
   background: none;
   overflow: hidden;
   transition: all 0.3s ease;
+  mix-blend-mode: difference;
 }
 
 .slide-button:before {

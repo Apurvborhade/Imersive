@@ -52,8 +52,8 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
                         </div>
                         <div className="menu-link" data-scroll="#about">
                             <div className="flex flex-col gap-10" onClick={() => setMenuOpen(false)}>
-                                <Link className="text-center" href="/">PROJECTS</Link>
-                                <Link className="text-center" href='/'>PROJECTS</Link>
+                                <Link className="text-center" href="/#projects">PROJECTS</Link>
+                                <Link className="text-center" href='/#projects'>PROJECTS</Link>
                             </div>
                         </div>
 
