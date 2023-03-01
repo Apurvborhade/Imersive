@@ -29,10 +29,10 @@ const Projects = () => {
     return (
         <div className='projects-wrapper grid lg:grid-cols-2 grid-cols-1 lg:mt-36 relative' id='projects'>
             <div className=' items-center projects p-10 flex flex-col gap-2'>
-                <video src="/landing.mp4" autoPlay loop muted id="landing-video"></video>
-                <video src="/Mas-Black-Shoe.mp4" autoPlay loop muted id="landing-video"></video>
-                <video src="/Banner-MAS.mp4.mp4" autoPlay loop muted id="landing-video"></video>
-                <video src="/MAS-BLCK-Card-Mint.mp4" autoPlay loop muted id="landing-video"></video>
+                <video src="/landing.mp4" autoPlay loop muted></video>
+                <video src="/Mas-shoe.mp4" autoPlay loop muted></video>
+                <video src="/Banner-MAS.mp4.mp4" autoPlay loop muted></video>
+                <video src="/MAS-BLCK-Card-Mint.mp4" autoPlay loop muted></video>
             </div>
             <div className='projects-info mb-10 lg:absolute lg:bottom-0 lg:right-0 lg:p-10'>
                 <p className='lg:text-6xl text-4xl px-10 lg:px-0 lg:text-left text-center'>WE TAKE GREAT PRIDE IN THE WORK WE DO</p>
