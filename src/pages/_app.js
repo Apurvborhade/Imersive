@@ -3,10 +3,34 @@ import '@/styles/responsive.css'
 import { Orbitron, Poppins, Karla } from '@next/font/google'
 import Loading from 'components/Loading'
 import { useEffect, useState } from 'react'
+import { storyblokInit, apiPlugin } from "@storyblok/react";
+import Landing from 'components/Landing'
+import Page from 'components/Page'
+import Teaser from 'components/Teaser'
+import Debug from 'components/Debug'
+import Services from 'components/Services'
+import Roadmap from 'components/Roadmap'
+import Projects from 'components/Projects'
+import Team from 'components/Team'
+
 
 const orbitron = Orbitron({ subsets: ['latin'] })
 const poppins = Poppins({ subsets: ['latin'], weight: '100' })
 const karla = Karla({ subsets: ['latin'] })
+
+const components = {
+  Landing:Landing,
+  Service:Services,
+  Roadmap:Roadmap,
+  Projects:Projects,
+  Team:Team,
+  page:Page,
+}
+storyblokInit({
+  accessToken: "QOLelHibe609NmHSJWtTLQtt",
+  use: [apiPlugin],
+  components
+});
 
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);

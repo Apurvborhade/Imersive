@@ -3,6 +3,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import Image from 'next/image';
 import { services } from 'data/services';
+import { storyblokEditable } from '@storyblok/react';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 const myLoader = ({ src, width, quality }) => {
     return `https://images.unsplash.com/photo-${src}`
 }
-const Services = () => {
+const Services = ({blok}) => {
 
     const [serviceWrapperWidth, setServiceWrapperWidth] = useState()
     const serviceWrapper = useRef()
@@ -166,7 +167,7 @@ const Services = () => {
     }, [])
 
     return (
-        <section className="service-section border-t border-white/[.2] flex lg:flex-row flex-col" id="services">
+        <section {...storyblokEditable(blok)} className="service-section border-t border-white/[.2] flex lg:flex-row flex-col" id="services">
             <div className="services-landing-wrapper flex justify-between flex-col relative items-center p-5 lg:p-0">
                 <div className="service-title w-full mt-5 lg:mr-16">
                     <p className="text-end test-text">{`{what we do}`}</p>
@@ -175,20 +176,19 @@ const Services = () => {
                     <div className="layout-circle absolute"></div>
                     <div className="overflow-hidden">
                         <div className="service-cta-text-wrapper">
-                            <span className="lg:text-9xl text-2xl uppercase" id="service-cta-text">EMPOWERING BRANDS</span>
+                            <span className="lg:text-9xl text-2xl uppercase" id="service-cta-text">{blok.PrimaryHeadline}</span>
                         </div>
                     </div>
                     <div className="ml-auto overflow-hidden">
                         <div className="ml-auto service-cta-text-wrapper">
-                            <span className="lg:text-7xl text-xl uppercase ">with great cx</span>
+                            <span className="lg:text-7xl text-xl uppercase ">{blok.SecondaryHeadline}</span>
                         </div>
                     </div>
                 </div>
                 <div className="services-desc mb-5 ">
                     <p
                         className="services-tagline text-right absolute lg:bottom-32 lg:right-32 right-10 text-xl bottom-16 ">
-                        With our expertise and top-of-the-line technology, businesses can enjoy a competitive edge and
-                        stay relevant in the evolving digital landscape.
+                        {blok.servicedesc}
                     </p>
                 </div>
             </div>

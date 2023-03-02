@@ -13,10 +13,11 @@ import Menu from 'components/Menu'
 import Header from 'components/Header'
 import Projects from 'components/Projects'
 import Loading from 'components/Loading'
+import { getStoryblokApi, StoryblokComponent, useStoryblokState } from "@storyblok/react"
 
-
-export default function Home() {
+export default function Home({ story }) {
   const [menuOpen, setMenuOpen] = useState(false)
+  story = useStoryblokState(story);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -60,7 +61,7 @@ export default function Home() {
     });
   }, [])
 
- 
+
   return (
     <>
       <Head>
@@ -72,13 +73,32 @@ export default function Home() {
       <div className='cursor'></div>
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <div className={`page-wrapper`}>
-        <Landing setMenuOpen={setMenuOpen} />
-        <Services />
-        <Roadmap />
-        <Projects />
-        <Team />
+        <Header setMenuOpen={setMenuOpen} />
+        <StoryblokComponent blok={story.content} />
         <Footer />
       </div>
     </>
   )
+}
+
+
+export async function getStaticProps() {
+  // home is the default slug for the homepage in Storyblok
+  let slug = "home";
+
+  // load the draft version
+  let sbParams = {
+    version: "draft", // or 'published'
+  };
+
+  const storyblokApi = getStoryblokApi();
+  let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
+
+  return {
+    props: {
+      story: data ? data.story : false,
+      key: data ? data.story.id : false,
+    },
+    revalidate: 3600, // revalidate every hour
+  };
 }

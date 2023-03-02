@@ -2,11 +2,12 @@ import gsap from 'gsap'
 import React, { useEffect } from 'react'
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import Image from 'next/image'
+import { storyblokEditable } from '@storyblok/react'
 const myLoader = ({ src, width, quality }) => {
     // https://images.unsplash.com/photo-
     return `https://images.unsplash.com/photo-${src}`
 }
-const Projects = () => {
+const Projects = ({blok}) => {
 
     useEffect(() => {
         if (window.screen.width > 1200) {
@@ -27,7 +28,7 @@ const Projects = () => {
     }, [])
 
     return (
-        <div className='projects-wrapper grid lg:grid-cols-2 grid-cols-1 lg:mt-36 relative' id='projects'>
+        <div {...storyblokEditable(blok)} className='projects-wrapper grid lg:grid-cols-2 grid-cols-1 lg:mt-36 relative' id='projects'>
             <div className=' items-center projects p-10 flex flex-col gap-2'>
                 <video src="/landing.mp4" autoPlay loop muted></video>
                 <video src="/MAS-Fashion-Jacket.mp4" autoPlay loop muted></video>

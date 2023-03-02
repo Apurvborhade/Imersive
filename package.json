@@ -6,10 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "proxy": "mkcert -install && mkcert localhost && local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem"
   },
   "dependencies": {
     "@next/font": "13.1.6",
+    "@storyblok/react": "^2.0.13",
     "@studio-freight/lenis": "^0.2.28",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
