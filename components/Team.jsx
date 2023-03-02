@@ -23,7 +23,7 @@ const Team = ({ blok }) => {
 
                 <div className="team-members-wrapper relative my-10 grid lg:grid-cols-6 grid-cols-2 gap-5">
                     {teamMembers.map(member => (
-                        <div className={`member-card ${member.large ? 'col-span-2' : ''}`}>
+                        <div className={`member-card ${member.large ? 'col-span-2' : ''}`} key={member._uid}>
                             <div className='image-wrapper rounded-lg overflow-hidden'>
                                 <Image
                                     loader={myLoader}
@@ -39,27 +39,7 @@ const Team = ({ blok }) => {
                             </div>
                         </div>
                     ))}
-                    {/* 
                     
-                    
-                    
-                    
-                    
-                    <div className='member-card'>
-                        <div className='image-wrapper rounded-lg overflow-hidden'>
-                            <Image
-                                loader={myLoader}
-                                src="2022/08/6-600x600.jpg"
-                                alt="Smart Contract Development"
-                                width={500}
-                                height={500}
-                            />
-                        </div>
-                        <div className='mt-5'>
-                            <p className='text-xl font-medium'>3VILWI5CH</p>
-                            <p className='team-role-text'>Creative At Imersive</p>
-                        </div>
-                    </div> */}
                 </div>
             </div>
         </section>
