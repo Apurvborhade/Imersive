@@ -12,12 +12,13 @@ const Roadmap = ({ blok }) => {
                 </div>
                 <div className="vertical-bars absolute mt-16 flex w-full h-full justify-around border-y">
                     <div className="bar lg:block hidden"></div>
-                    <div className="bar"></div>
+                    <div className="bar lg:block hidden"></div>
                     <div className="bar lg:block hidden"></div>
                 </div>
 
                 {phases.map(phase => (
-                    <div className={`roadmap mt-52 ${phase.isAlignedLeft ? 'rotu' : ''}`} key={phase._uid}>
+                    <>
+                    <div className={`roadmap mt-52 ${phase.isAlignedLeft ? 'rotu' : ''} hidden lg:block `} key={phase._uid} >
                         <div className="roadmap-phase relative">
                             <div className={`phase-title absolute -top-12 ${phase.isAlignedLeft ? 'left-12' : 'left-20'} flex`}>
                                 <p className={`phase-desc text-sm text-black/[.3] w-96 absolute -top-10 ${phase.isAlignedLeft ? 'left-40 rotu' : 'left-32'} hidden lg:block`}>{phase.phasedesc}</p>
@@ -31,6 +32,12 @@ const Roadmap = ({ blok }) => {
                             </div>
                         </div>
                     </div>
+                    <div className='lg:hidden block mt-32 border-b pb-10'>
+                        <p className={`text-center`}>{phase.phasetitle}</p>
+                        <p className={`phase-desc text-sm text-black/[.3]  text-center`}>{phase.phasedesc}</p>
+
+                    </div>
+                    </>
                 ))}
             </div>
 

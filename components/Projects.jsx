@@ -28,7 +28,7 @@ const Projects = ({blok}) => {
     }, [])
 
     return (
-        <div {...storyblokEditable(blok)} className='projects-wrapper grid lg:grid-cols-2 grid-cols-1 lg:mt-36 relative' id='projects'>
+        <div {...storyblokEditable(blok)} className='projects-wrapper grid lg:grid-cols-2 grid-cols-1 lg:mt-36 mt-20 relative' id='projects'>
             <div className=' items-center projects p-10 flex flex-col gap-2'>
                 <video src="/landing.mp4" autoPlay loop muted></video>
                 <video src="/MAS-Fashion-Jacket.mp4" autoPlay loop muted></video>
