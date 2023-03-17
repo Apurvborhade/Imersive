@@ -14,15 +14,12 @@ const myLoader = ({ src, width, quality }) => {
 }
 const Services = ({blok}) => {
 
-    const [serviceWrapperWidth, setServiceWrapperWidth] = useState()
     const serviceWrapper = useRef()
     
-    useEffect(() => {
-        if(serviceWrapper.current) {
-
-            setServiceWrapperWidth(serviceWrapper.current.clientWidth)
-        }
-    },[serviceWrapper])
+    const serviceBodyShiftCalc = () => {
+        return (serviceWrapper.current.clientWidth) + (services.length * 240) + (services.length * 48) + 48
+    }
+    
     useEffect(() => {
         // TEXT REVEAL ANIM
         gsap.from(".service-cta-text-wrapper", {
@@ -51,7 +48,8 @@ const Services = ({blok}) => {
                     markers: false,
                     scrub: true
                 },
-                xPercent: -(((services.length - 1) * 100) - ((385/3840) * 100)),
+                x:-serviceBodyShiftCalc(),
+                // xPercent: -(((services.length - 1) * 100) - ((385/3840) * 100)),
                 ease: "none",
                 delay: 2
             })

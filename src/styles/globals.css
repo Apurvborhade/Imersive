@@ -130,6 +130,7 @@ header {
 .service-section,.services-body,.section-process,.process-roadmap-wrapper {
   min-height: 100vh;
 }
+
 .layout-circle {
   width: 600px;
   height: 600px;
@@ -156,7 +157,7 @@ header {
   border: 1px solid #fff3;
   left: -2%;
 }
-.services-landing-wrapper,.services-body {
+.services-landing-wrapper {
   min-width: 100vw;
 }
 
@@ -227,9 +228,7 @@ object-fit: cover;
   transition: all 1s ease;
 
 }
-.services-body {
-  min-width: 200vw;
-}
+
 
 .bar {
   width: 0.3px;

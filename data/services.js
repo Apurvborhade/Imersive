@@ -23,5 +23,6 @@ export const services = [
         description:"Imersive creates fully immersive virtual experiences that amplify your brand's presence, build community, and provide a virtual commerce hub.",
         image:"1624820928414-9a350cc250e6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80 "
     },
+    
    
 ]
