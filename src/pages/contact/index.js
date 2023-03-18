@@ -2,16 +2,33 @@ import Header from 'components/Header'
 import Menu from 'components/Menu'
 import { sendContactForm } from 'lib/api'
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import intlTelInput from 'intl-tel-input';
+import "intl-tel-input/build/js/utils"
+
 
 const initValues = { name: "", company: "", email: "", phone: "" }
 
 const initState = { values: initValues, isLoading: false, isSuccess: false }
 
 const Contact = () => {
+    const [contactDetails, setContactDetails] = useState(initState);
+
+    const input = useRef()
     
+    useEffect(() =>{
+        const iti = intlTelInput(input.current)
+        var test = iti.getSelectedCountryData();
+        console.log(test)
+    },[contactDetails])
+    useEffect(() => {
+        intlTelInput(input.current, {
+            separateDialCode:true
+        });
+        
+    },[document.querySelector("#phone")])
 
     useEffect(() => {
         const cursor = document.querySelector(".cursor");
@@ -28,9 +45,8 @@ const Contact = () => {
             }, 100);
         });
     }, [])
-    const [contactDetails, setContactDetails] = useState(initState);
 
-    const { values, isLoading,isSuccess } = contactDetails;
+    const { values, isLoading, isSuccess } = contactDetails;
     useEffect(() => {
         if (isSuccess) {
             toast('Sent Succesfully', {
@@ -46,6 +62,7 @@ const Contact = () => {
         }
     })
     const handleChange = ({ target }) => {
+        
         setContactDetails((prev) => ({
             ...prev,
             values: {
@@ -113,7 +130,7 @@ const Contact = () => {
                                 <input type="text" placeholder="name" name='name' className='border font-bold py-4 px-10 outline-none focus:border-black' value={values.name} onChange={handleChange} />
                                 <input type="text" placeholder="company" name='company' className='border font-bold py-4 px-10 outline-none focus:border-black' value={values.company} onChange={handleChange} />
                                 <input type="text" placeholder="email" name='email' className='border font-bold py-4 px-10 outline-none focus:border-black' required value={values.email} onChange={handleChange} />
-                                <input type="text" placeholder="phone" name='phone' className='border font-bold py-4 px-10 outline-none focus:border-black' required value={values.phone} onChange={handleChange} />
+                                <input ref={input} type="text" id='phone' placeholder="phone" name='phone' className='border font-bold py-4 px-10 outline-none focus:border-black' required value={values.phone} onChange={handleChange}  />
                                 <button className='form-submit-btn bg-black p-7 text-white'>Submit</button>
                             </form>
                         </div>

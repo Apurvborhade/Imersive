@@ -1,7 +1,6 @@
 import Head from 'next/head'
 
 import styles from '@/styles/Home.module.css'
-
 import Landing from 'components/Landing'
 import Services from 'components/Services'
 import Roadmap from 'components/Roadmap'

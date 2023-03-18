@@ -36,7 +36,7 @@ const Services = ({blok}) => {
             rotation: 45, transformOrigin: "left 100%"
         });
 
-        if (window.screen.width > 1200) {
+        if (window.screen.width > 1000) {
             // SLIDE SERVICES
             const tweenanim = gsap.to("#services", {
                 scrollTrigger: {
