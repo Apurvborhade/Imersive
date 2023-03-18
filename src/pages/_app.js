@@ -1,14 +1,12 @@
 import '@/styles/globals.css'
 import '@/styles/responsive.css'
-import 'intl-tel-input/build/css/intlTelInput.css';
 import { Orbitron, Poppins, Karla } from '@next/font/google'
 import Loading from 'components/Loading'
 import { useEffect, useState } from 'react'
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 import Landing from 'components/Landing'
 import Page from 'components/Page'
-import Teaser from 'components/Teaser'
-import Debug from 'components/Debug'
+
 import Services from 'components/Services'
 import Roadmap from 'components/Roadmap'
 import Projects from 'components/Projects'

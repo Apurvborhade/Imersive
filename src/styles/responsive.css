@@ -5,13 +5,13 @@
         padding: 0px 100px;
     }
     .service-wrapper {
-        min-width:50vw;
+        min-width:70vw;
     }
     .service-image-wrapper {
-        width: 50vw;
+        width: 70vw;
       }
     .service-image-wrapper-full {
-        width: 50vw;
+        width: 100%;
     }
 
     .layout-circle{
@@ -113,10 +113,7 @@
         border: 1px solid #fff3;
         left: 1%;
     }
-    .services-body {
-        min-width: 100vw;
-        padding: 1.2rem;
-    }
+    
     .service-image-wrapper {
         height: 70vh;
         width: 100%;

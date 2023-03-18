@@ -2,33 +2,49 @@ import Header from 'components/Header'
 import Menu from 'components/Menu'
 import { sendContactForm } from 'lib/api'
 import Link from 'next/link';
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import intlTelInput from 'intl-tel-input';
-import "intl-tel-input/build/js/utils"
+import 'react-phone-number-input/style.css';
 
 
 const initValues = { name: "", company: "", email: "", phone: "" }
-
-const initState = { values: initValues, isLoading: false, isSuccess: false }
+const initState = { values: initValues, isLoading: false, isSuccess: false, error: "", inValidPhone: false }
 
 const Contact = () => {
+    const [phoneNumber, setPhoneNumber] = useState('');
     const [contactDetails, setContactDetails] = useState(initState);
 
-    const input = useRef()
-    
-    useEffect(() =>{
-        const iti = intlTelInput(input.current)
-        var test = iti.getSelectedCountryData();
-        console.log(test)
-    },[contactDetails])
-    useEffect(() => {
-        intlTelInput(input.current, {
-            separateDialCode:true
-        });
+
+
+    const handlePhoneChange = (value) => {
+        setPhoneNumber(value);
+        setContactDetails((prev) => ({
+            ...prev,
+            values: {
+                ...prev.values,
+                phone: phoneNumber
+            }
+        }))
         
-    },[document.querySelector("#phone")])
+
+        if (value) {
+            if (!isValidPhoneNumber(value)) {
+                setContactDetails((prev) => ({
+                    ...prev,
+                    isLoading: false,
+                    inValidPhone: true,
+                }));
+            } else {
+                setContactDetails((prev) => ({
+                    ...prev,
+                    isLoading: false,
+                    inValidPhone: false,
+                }));
+            }
+        }
+    };
 
     useEffect(() => {
         const cursor = document.querySelector(".cursor");
@@ -46,7 +62,8 @@ const Contact = () => {
         });
     }, [])
 
-    const { values, isLoading, isSuccess } = contactDetails;
+    const { values, isLoading, isSuccess, error } = contactDetails;
+
     useEffect(() => {
         if (isSuccess) {
             toast('Sent Succesfully', {
@@ -60,9 +77,10 @@ const Contact = () => {
                 theme: "light",
             });
         }
+
+
     })
     const handleChange = ({ target }) => {
-        
         setContactDetails((prev) => ({
             ...prev,
             values: {
@@ -70,6 +88,7 @@ const Contact = () => {
                 [target.name]: target.value,
             }
         }))
+
     }
 
     const onSubmit = async (e) => {
@@ -79,11 +98,25 @@ const Contact = () => {
             isLoading: true,
         }));
         try {
-            await sendContactForm(values)
-            setContactDetails({
-                values: initValues, isLoading: false, isSuccess: true
-            });
+            if (!contactDetails.inValidPhone) {
+                await sendContactForm(values)
+                setContactDetails({
+                    values: initValues, isLoading: false, isSuccess: true
+                });
+            } else {
+                setContactDetails((prev) => ({
+                    ...prev,
+                    isLoading: false,
+                    error: "invalid Phone"
+                }));
+            }
+            setPhoneNumber("")
         } catch (error) {
+            setContactDetails((prev) => ({
+                ...prev,
+                isLoading: false,
+                error: error.message
+            }))
             console.log(error)
         }
 
@@ -119,6 +152,7 @@ const Contact = () => {
                         </div>
 
                         <div className='contact-form text-black relative'>
+
                             {isLoading ? (
                                 <div className="loader">
                                     <div className="spinner"></div>
@@ -127,10 +161,20 @@ const Contact = () => {
                             <p className='lg:text-3xl text-2xl'>Hello, Imersive Team!</p>
 
                             <form onSubmit={onSubmit} className="contact-form flex flex-col gap-10 my-10">
-                                <input type="text" placeholder="name" name='name' className='border font-bold py-4 px-10 outline-none focus:border-black' value={values.name} onChange={handleChange} />
-                                <input type="text" placeholder="company" name='company' className='border font-bold py-4 px-10 outline-none focus:border-black' value={values.company} onChange={handleChange} />
-                                <input type="text" placeholder="email" name='email' className='border font-bold py-4 px-10 outline-none focus:border-black' required value={values.email} onChange={handleChange} />
-                                <input ref={input} type="text" id='phone' placeholder="phone" name='phone' className='border font-bold py-4 px-10 outline-none focus:border-black' required value={values.phone} onChange={handleChange}  />
+                                <input type="text" required placeholder="name" name='name' className='border font-bold py-4 px-10 outline-none focus:border-black' value={values.name} onChange={handleChange} />
+                                <input type="text" required placeholder="company" name='company' className='border font-bold py-4 px-10 outline-none focus:border-black' value={values.company} onChange={handleChange} />
+                                <input type="email" placeholder="email" name='email' className='border font-bold py-4 px-10 outline-none focus:border-black' required value={values.email} onChange={handleChange} />
+                                <PhoneInput
+                                    type="tel" id='phone' placeholder="phone" name='phone'
+                                    required
+                                    className='border font-normal py-4 px-5 outline-none focus:border-black'
+                                    value={phoneNumber}
+                                    onChange={handlePhoneChange}
+                                />
+                                {error && (
+                                    <p className='text-red-700 text-xl text-center error-message'>{error}</p>
+                                )}
+
                                 <button className='form-submit-btn bg-black p-7 text-white'>Submit</button>
                             </form>
                         </div>

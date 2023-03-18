@@ -12,14 +12,21 @@ gsap.registerPlugin(ScrollTrigger);
 const myLoader = ({ src, width, quality }) => {
     return `https://images.unsplash.com/photo-${src}`
 }
-const Services = ({blok}) => {
+const Services = ({ blok }) => {
 
     const serviceWrapper = useRef()
-    
+
+    useEffect(() => {
+        console.log(serviceWrapper)
+    }, [])
     const serviceBodyShiftCalc = () => {
-        return (serviceWrapper.current.clientWidth) + (services.length * 240) + (services.length * 48) + 48
+        if(1020 < window.screen.width < 1500) {
+            return (serviceWrapper.current.clientWidth) + (services.length * 0) + (services.length * 20) + 28
+        } else {
+            return (serviceWrapper.current.clientWidth) + (services.length * 240) + (services.length * 48) + 48
+        }
     }
-    
+
     useEffect(() => {
         // TEXT REVEAL ANIM
         gsap.from(".service-cta-text-wrapper", {
@@ -48,7 +55,7 @@ const Services = ({blok}) => {
                     markers: false,
                     scrub: true
                 },
-                x:-serviceBodyShiftCalc(),
+                x: -serviceBodyShiftCalc(),
                 // xPercent: -(((services.length - 1) * 100) - ((385/3840) * 100)),
                 ease: "none",
                 delay: 2

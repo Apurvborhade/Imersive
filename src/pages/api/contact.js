@@ -28,7 +28,7 @@ const handler = async (req, res) => {
   if (req.method === "POST") {
     const data = req.body;
     if (!data.name || !data.email || !data.company || !data.phone) {
-      return res.status(400).json({ message: 'Bad NO PHONE' })
+      return res.status(400).json({ message: 'Invalid data' })
     }
 
     try {
@@ -45,7 +45,7 @@ const handler = async (req, res) => {
       return res.status(400).json({ message: error.message })
     }
   }
-  return res.status(400).json({ message: 'eBad Request' })
+  return res.status(400).json({ message: 'Bad Request' })
 }
 
 
