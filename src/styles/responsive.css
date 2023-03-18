@@ -1,10 +1,18 @@
 
 
-@media (min-width:1200px) and (max-width: 1511px) {
+@media (min-width:1020px) and (max-width: 1511px) {
     .services-tagline-wrapper {
         padding: 0px 100px;
     }
-   
+    .service-wrapper {
+        min-width:50vw;
+    }
+    .service-image-wrapper {
+        width: 50vw;
+      }
+    .service-image-wrapper-full {
+        width: 50vw;
+    }
 
     .layout-circle{
         width: 500px;
