@@ -14,11 +14,30 @@ import Projects from 'components/Projects'
 import Loading from 'components/Loading'
 import { getStoryblokApi, StoryblokComponent, useStoryblokState } from "@storyblok/react"
 
+// Define custom CSS styles for the log message
+const logStyle = `
+  font-weight: bold;
+  color: #fff;
+  background-color: #617143;
+  padding: 12px 14px;
+  border-radius: 4px;
+`;
+
+// Define a function that logs the message with the custom styles
+function customLog(message) {
+  console.log(`%c${message}`, logStyle);
+}
+
+// Call the customLog function with a message
+customLog('Design and Developed By https://github.com/Apurvborhade ❤️');
+
+
 export default function Home({ story }) {
   const [menuOpen, setMenuOpen] = useState(false)
   story = useStoryblokState(story);
 
   useEffect(() => {
+
     const lenis = new Lenis({
       duration: 2.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou

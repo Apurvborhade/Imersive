@@ -1,6 +1,24 @@
 
 
 @media (min-width:1020px) and (max-width: 1511px) {
+    .team-wrapper {
+        padding: 0px 100px;
+    }
+    .projects-info {
+        top: 0;
+        right: 0;
+        text-align: right;
+    }
+    .projects-info > p{
+        font-size: 2rem;
+        width: 50%;
+        position: sticky;
+        margin-left: auto;
+    }
+    .footer-cta {
+        text-align: center;
+        font-size: 4rem;
+    }
     .services-tagline-wrapper {
         padding: 0px 100px;
     }

@@ -117,7 +117,6 @@ const Contact = () => {
                 isLoading: false,
                 error: error.message
             }))
-            console.log(error)
         }
 
     }

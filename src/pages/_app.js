@@ -14,7 +14,7 @@ import Team from 'components/Team'
 
 
 const orbitron = Orbitron({ subsets: ['latin'] })
-const poppins = Poppins({ subsets: ['latin'], weight: '100' })
+const poppins = Poppins({ subsets: ['latin'], weight: ['100','200'] })
 const karla = Karla({ subsets: ['latin'] })
 
 const components = {

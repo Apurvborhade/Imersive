@@ -16,13 +16,11 @@ const Services = ({ blok }) => {
 
     const serviceWrapper = useRef()
 
-    useEffect(() => {
-        console.log(serviceWrapper)
-    }, [])
     const serviceBodyShiftCalc = () => {
-        if(1020 < window.screen.width < 1500) {
+        if (window.screen.width < 1500) {
             return (serviceWrapper.current.clientWidth) + (services.length * 0) + (services.length * 20) + 28
-        } else {
+        } 
+        if (window.screen.width > 1510) {
             return (serviceWrapper.current.clientWidth) + (services.length * 240) + (services.length * 48) + 48
         }
     }

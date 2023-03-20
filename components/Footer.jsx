@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <footer className={`flex flex-col -z-10 border border-t`} id="#footer">
       <div className={`footer-cta flex-1`}>
-        <h2 className={`lg:text-8xl text-3xl mb-5 font-light`}>Ready to work with us?</h2>
-        <p className="lg:text-2xl text-xl">hello@imersive.co</p>
+        <h2 className={`lg:text-8xl text-3xl mb-5 font-light footer-cta`}>Ready to work with us?</h2>
+        <p className="lg:text-2xl text-xl font-normal">hello@imersive.co</p>
       </div>
 
       <div className="footer-navigation px-10 ">
