@@ -256,6 +256,11 @@ header {
 
 
 /* ABOUT */
+.inner-slider img {
+ min-width: 700px;
+ height: 350px;
+ object-fit: cover;
+}
 .card {
   height: 300px;
   width: 400px;
