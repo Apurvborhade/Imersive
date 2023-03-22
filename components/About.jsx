@@ -122,13 +122,12 @@ const About = () => {
                     </div>
                     <div className='slider-container relative mt-10'>
                         <div className='inner-slider'>
-                            <Image loader={myLoader} src='1677311573471-fcd492a8b2d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDExM3xDRHd1d1hKQWJFd3x8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60' width={400} height={350} />
-                            <Image loader={myLoader} src='1677311573471-fcd492a8b2d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDExM3xDRHd1d1hKQWJFd3x8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60' width={400} height={350} />
-                            <Image loader={myLoader} src='1677311573471-fcd492a8b2d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDExM3xDRHd1d1hKQWJFd3x8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60' width={400} height={350} />
-                            <Image loader={myLoader} src='1677311573471-fcd492a8b2d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDExM3xDRHd1d1hKQWJFd3x8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60' width={400} height={350} />
-                            <Image loader={myLoader} src='1677311573471-fcd492a8b2d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDExM3xDRHd1d1hKQWJFd3x8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60' width={400} height={350} />
-                            <Image loader={myLoader} src='1677311573471-fcd492a8b2d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDExM3xDRHd1d1hKQWJFd3x8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60' width={400} height={350} />
-                            <Image loader={myLoader} src='1677311573471-fcd492a8b2d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDExM3xDRHd1d1hKQWJFd3x8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60' width={400} height={350} />
+                            <div className='card'></div>
+                            <div className='card'></div>
+                            <div className='card'></div>
+                            <div className='card'></div>
+                            <div className='card'></div>
+                            <div className='card'></div>
                         </div>
                     </div>
                 </div>
