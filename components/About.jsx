@@ -109,7 +109,7 @@ const About = () => {
                 <div className='showcase-header pl-20'>
                     <div>
                         <h2 className='uppercase poppins text-4xl'>Explore our spaces</h2>
-                        <p className='text-white/[0.8] w-mid mt-5'>Step into the world of the metaverse with our stunning 3D spaces that help brands to showcase their products like never before. Our team has created virtual stores, art galleries, showrooms, and more, providing a unique and immersive experience that's sure to captivate your audience.</p>
+                        <p className='text-white/[0.8] w-mid mt-5'>Step into the world of the metaverse with our stunning 3D spaces that help brands to showcase their products like never before. Our team has created virtual stores, art galleries, showrooms, and more, providing a unique and immersive experience that&apos;s sure to captivate your audience.</p>
                     </div>
                     <div className='slider-container relative mt-10'>
                         <div className='inner-slider'>
