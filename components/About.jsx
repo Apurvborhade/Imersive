@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import React, { useEffect } from 'react'
 
-import interactive from "../public/interactive.png"
-
+import { MdTouchApp } from 'react-icons/md'
 const myLoader = ({ src }) => {
     return `https://images.unsplash.com/photo-${src}`
 }
@@ -66,10 +65,8 @@ const About = () => {
                 <div className='grid grid-cols-2 grid-rows-2 px-44 gap-x-40 mt-20 gap-y-20'>
                     <div className='product-desc-card flex'>
                         <div className='desc-icon mr-5'>
-                            <Image
-                                src={interactive}
-                                width="120"
-                            />
+
+                            <MdTouchApp size={50} />
                         </div>
                         <div>
                             <p>Interactive 3D Product Displays</p>
@@ -78,10 +75,8 @@ const About = () => {
                     </div>
                     <div className='product-desc-card flex'>
                         <div className='desc-icon mr-5'>
-                            <Image
-                                src={interactive}
-                                width="120"
-                            />
+
+                            <MdTouchApp size={50} />
                         </div>
                         <div>
                             <p>Interactive 3D Product Displays</p>
@@ -90,10 +85,8 @@ const About = () => {
                     </div>
                     <div className='product-desc-card flex'>
                         <div className='desc-icon mr-5'>
-                            <Image
-                                src={interactive}
-                                width="120"
-                            />
+
+                            <MdTouchApp size={50} />
                         </div>
                         <div>
                             <p>Interactive 3D Product Displays</p>
@@ -102,10 +95,8 @@ const About = () => {
                     </div>
                     <div className='product-desc-card flex'>
                         <div className='desc-icon mr-5'>
-                            <Image
-                                src={interactive}
-                                width="120"
-                            />
+
+                            <MdTouchApp size={50} />
                         </div>
                         <div>
                             <p>Interactive 3D Product Displays</p>
