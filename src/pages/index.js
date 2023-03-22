@@ -1,18 +1,20 @@
 import Head from 'next/head'
 
-import styles from '@/styles/Home.module.css'
-import Landing from 'components/Landing'
-import Services from 'components/Services'
-import Roadmap from 'components/Roadmap'
-import Team from 'components/Team'
+
 import Footer from 'components/Footer'
 import { useEffect, useState } from 'react'
 import Lenis from '@studio-freight/lenis'
 import Menu from 'components/Menu'
 import Header from 'components/Header'
-import Projects from 'components/Projects'
-import Loading from 'components/Loading'
+
 import { getStoryblokApi, StoryblokComponent, useStoryblokState } from "@storyblok/react"
+
+import { AnimatePresence, motion } from 'framer-motion'
+import { useRouter } from 'next/router'
+
+
+
+
 
 // Define custom CSS styles for the log message
 const logStyle = `
@@ -35,7 +37,7 @@ customLog('Design and Developed By https://github.com/Apurvborhade ❤️');
 export default function Home({ story }) {
   const [menuOpen, setMenuOpen] = useState(false)
   story = useStoryblokState(story);
-
+  const router = useRouter();
   useEffect(() => {
 
     const lenis = new Lenis({
@@ -63,25 +65,15 @@ export default function Home({ story }) {
     requestAnimationFrame(raf)
   }, [])
 
-  useEffect(() => {
+  const cursorMove = (e) => {
     const cursor = document.querySelector(".cursor");
-
-    document.addEventListener("mousemove", (e) => {
-      cursor.style.transform = `translate(${e.clientX - 30}px, ${e.clientY - 30}px)`;
-    });
-
-    document.addEventListener("click", () => {
-      cursor.classList.add("cursor-click");
-
-      setTimeout(() => {
-        cursor.classList.remove("cursor-click");
-      }, 100);
-    });
-  }, [])
+    cursor.style.transform = `translate(${e.clientX - 30}px, ${e.clientY - 30}px)`;
+  }
+  
 
 
   return (
-    <>
+    <div onMouseMove={cursorMove}>
       <Head>
         <title>Imersive.io</title>
         <meta name="description" content="We help you navigate new frontiers in customer engagement. At Immerse, we build immersive virtual experiences that connect with audiences that matter the most to your business." />
@@ -92,10 +84,12 @@ export default function Home({ story }) {
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <div className={`page-wrapper`}>
         <Header setMenuOpen={setMenuOpen} />
+
         <StoryblokComponent blok={story.content} />
         <Footer />
+
       </div>
-    </>
+    </div>
   )
 }
 

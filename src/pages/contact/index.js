@@ -7,7 +7,8 @@ import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-phone-number-input/style.css';
-
+import { AnimatePresence,motion } from 'framer-motion'
+import { useRouter } from 'next/router'
 
 const initValues = { name: "", company: "", email: "", phone: "" }
 const initState = { values: initValues, isLoading: false, isSuccess: false, error: "", inValidPhone: false }
@@ -15,7 +16,7 @@ const initState = { values: initValues, isLoading: false, isSuccess: false, erro
 const Contact = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [contactDetails, setContactDetails] = useState(initState);
-
+    const router = useRouter();
 
 
     const handlePhoneChange = (value) => {
@@ -27,7 +28,7 @@ const Contact = () => {
                 phone: phoneNumber
             }
         }))
-        
+
 
         if (value) {
             if (!isValidPhoneNumber(value)) {
@@ -45,22 +46,11 @@ const Contact = () => {
             }
         }
     };
-
-    useEffect(() => {
+    const cursorMove = (e) => {
         const cursor = document.querySelector(".cursor");
+        cursor.style.transform = `translate(${e.clientX - 30}px, ${e.clientY - 100}px)`;
+    }
 
-        document.addEventListener("mousemove", (e) => {
-            cursor.style.transform = `translate(${e.clientX - 30}px, ${e.clientY - 100}px)`;
-        });
-
-        document.addEventListener("click", () => {
-            cursor.classList.add("cursor-click");
-
-            setTimeout(() => {
-                cursor.classList.remove("cursor-click");
-            }, 100);
-        });
-    }, [])
 
     const { values, isLoading, isSuccess, error } = contactDetails;
 
@@ -137,49 +127,79 @@ const Contact = () => {
                 theme="light"
             />
             <div className='cursor'></div>
-            <div>
+            <div onMouseMove={cursorMove}>
                 <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
                 <Header setMenuOpen={setMenuOpen} />
 
-                <div className=' relative flex mt-20 justify-center items-center h-full py-3 '>
-                    <div className='contact-form-wrapper grid lg:grid-cols-2 grid-cols-1 gap-20 lg:p-20 p-10'>
-                        <div className='contact-cta lg:border-r lg:border-b-0 border-b text-black flex flex-col lg:justify-around justify-center lg:pr-20'>
-                            <h3 className='lg:text-6xl text-lg w-96'>LET&apos;S CONNECT TOGETHER</h3>
-                            <div className='back-link lg:flex w-60 bg-black h-60 rounded-full flex ml-auto hidden justify-center items-center text-white'>
-                                <Link href='/'>GO BACK HOME</Link>
+                <AnimatePresence>
+                    <motion.div
+                        key={router.route}
+                        initial="intialState"
+                        animate="animateState"
+                        exit="exitState"
+                        variants={{
+                            intialState: {
+                                opacity: 0,
+                                y: 50
+                            },
+                            animateState: {
+                                opacity: 1,
+                                y: 0,
+                                transition: {
+                                    duration: 0.5
+                                }
+                            },
+                            exitState: {
+                                opacity: 0,
+                                y: -50,
+                                transition: {
+                                    duration: 0.5
+                                }
+                            },
+                        }}
+                    >
+                        <div className=' relative flex mt-20 justify-center items-center h-full py-3 '>
+                            <div className='contact-form-wrapper grid lg:grid-cols-2 grid-cols-1 gap-20 lg:p-20 p-10'>
+                                <div className='contact-cta lg:border-r lg:border-b-0 border-b text-black flex flex-col lg:justify-around justify-center lg:pr-20'>
+                                    <h3 className='lg:text-6xl text-lg w-96'>LET&apos;S CONNECT TOGETHER</h3>
+                                    <div className='back-link lg:flex w-60 bg-black h-60 rounded-full flex ml-auto hidden justify-center items-center text-white'>
+                                        <Link href='/'>GO BACK HOME</Link>
+                                    </div>
+                                </div>
+
+                                <div className='contact-form text-black relative'>
+
+                                    {isLoading ? (
+                                        <div className="loader">
+                                            <div className="spinner"></div>
+                                        </div>
+                                    ) : null}
+                                    <p className='lg:text-3xl text-2xl'>Hello, Imersive Team!</p>
+
+                                    <form onSubmit={onSubmit} className="contact-form flex flex-col gap-10 my-10">
+                                        <input type="text" required placeholder="name" name='name' className='border font-bold py-4 px-10 outline-none focus:border-black' value={values.name} onChange={handleChange} />
+                                        <input type="text" required placeholder="company" name='company' className='border font-bold py-4 px-10 outline-none focus:border-black' value={values.company} onChange={handleChange} />
+                                        <input type="email" placeholder="email" name='email' className='border font-bold py-4 px-10 outline-none focus:border-black' required value={values.email} onChange={handleChange} />
+                                        <PhoneInput
+                                            type="tel" id='phone' placeholder="phone" name='phone'
+                                            required
+                                            className='border font-normal py-4 px-5 outline-none focus:border-black'
+                                            value={phoneNumber}
+                                            onChange={handlePhoneChange}
+                                        />
+                                        {error && (
+                                            <p className='text-red-700 text-xl text-center error-message'>{error}</p>
+                                        )}
+
+                                        <button className='form-submit-btn bg-black p-7 text-white'>Submit</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-
-                        <div className='contact-form text-black relative'>
-
-                            {isLoading ? (
-                                <div className="loader">
-                                    <div className="spinner"></div>
-                                </div>
-                            ) : null}
-                            <p className='lg:text-3xl text-2xl'>Hello, Imersive Team!</p>
-
-                            <form onSubmit={onSubmit} className="contact-form flex flex-col gap-10 my-10">
-                                <input type="text" required placeholder="name" name='name' className='border font-bold py-4 px-10 outline-none focus:border-black' value={values.name} onChange={handleChange} />
-                                <input type="text" required placeholder="company" name='company' className='border font-bold py-4 px-10 outline-none focus:border-black' value={values.company} onChange={handleChange} />
-                                <input type="email" placeholder="email" name='email' className='border font-bold py-4 px-10 outline-none focus:border-black' required value={values.email} onChange={handleChange} />
-                                <PhoneInput
-                                    type="tel" id='phone' placeholder="phone" name='phone'
-                                    required
-                                    className='border font-normal py-4 px-5 outline-none focus:border-black'
-                                    value={phoneNumber}
-                                    onChange={handlePhoneChange}
-                                />
-                                {error && (
-                                    <p className='text-red-700 text-xl text-center error-message'>{error}</p>
-                                )}
-
-                                <button className='form-submit-btn bg-black p-7 text-white'>Submit</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </AnimatePresence>
             </div>
+
         </>
     )
 }

@@ -1,16 +1,34 @@
+// Import necessary modules and components
 import { storyblokEditable } from '@storyblok/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+
+// Define custom loader function for the Next.js Image component
 const myLoader = ({ src }) => {
-    // https://images.unsplash.com/photo-
+    // Construct the URL for the image based on the "src" property
     return `https://imersive.io/wp-content/uploads/${src}`
 }
+
+// Define the "Team" component
 const Team = ({ blok }) => {
+    // Extract the "members" array from the "blok" object passed as a prop
     const teamMembers = blok.members;
-
+    
+    // Define a function to add a CSS class to the cursor element
+    const cursorBlendOff = (e) => {
+        const cursor = document.querySelector(".cursor");
+        cursor.classList.add("blendoff")
+    }
+    
+    // Define a function to remove a CSS class from the cursor element
+    const cursorBlendOn = (e) => {
+        const cursor = document.querySelector(".cursor");
+        cursor.classList.remove("blendoff")
+    }
+    
+    // Render the team section with editable content
     return (
-
         <section {...storyblokEditable(blok)} className="team-wrapper relative mt-52 lg:px-52 px-10 py-10">
             <div className="team-section-header">
                 <div className="heading">
@@ -22,28 +40,33 @@ const Team = ({ blok }) => {
                 </div>
 
                 <div className="team-members-wrapper relative my-10 grid lg:grid-cols-6 grid-cols-2 gap-5">
+                    {/* Map over the "members" array to render a "member-card" for each member */}
                     {teamMembers.map(member => (
                         <div className={`member-card ${member.large ? 'col-span-2' : ''}`} key={member._uid}>
                             <div className='image-wrapper rounded-lg overflow-hidden'>
+                                {/* Render the member's profile picture using the Next.js Image component */}
                                 <Image
-                                    loader={myLoader}
-                                    src={member.imagesrc}
+                                    onMouseMove={cursorBlendOff} // Add event listener to add a CSS class to the cursor element
+                                    onMouseLeave={cursorBlendOn} // Add event listener to remove a CSS class from the cursor element
+                                    loader={myLoader} // Set the custom loader function to fetch the image
+                                    src={member.imagesrc} // Set the URL of the image
                                     alt="Smart Contract Development"
                                     width={500}
                                     height={500}
                                 />
                             </div>
                             <div className='mt-5'>
+                                {/* Render the member's name and role */}
                                 <p className='text-xl font-medium uppercase'>{member.name}</p>
                                 <p className='team-role-text'>{member.role}</p>
                             </div>
                         </div>
                     ))}
-                    
                 </div>
             </div>
         </section>
     )
 }
 
+// Export the "Team" component as the default export
 export default Team
