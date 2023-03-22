@@ -71,7 +71,7 @@ const Services = ({ blok }) => {
                     <div className='service pt-3' ref={slideDiv}>
                         <div className='lg:text-5xl text-2xl flex justify-between'  >
                             <p className='montserrat'>LANDING PAGE</p>
-                            <p className='montserrat'>$1000</p>
+                            <p className='montserrat'></p>
                         </div>
                         <div className='lg:text-3xl text-xl flex justify-between service-detail mt-10' >
                             <p className='montserrat'>A corporate and marine travel online platform that brings travel coordinators, travelers and travel advisors together.</p>
@@ -82,7 +82,7 @@ const Services = ({ blok }) => {
                     <div className='service pt-3' ref={slideDiv}>
                         <div className='lg:text-5xl text-2xl flex justify-between'  >
                             <p className='montserrat'>LANDING PAGE</p>
-                            <p className='montserrat'>$1000</p>
+                            <p className='montserrat'></p>
                         </div>
                         <div className='lg:text-3xl text-xl flex justify-between service-detail mt-10' >
                             <p className='montserrat'>A corporate and marine travel online platform that brings travel coordinators, travelers and travel advisors together.</p>
