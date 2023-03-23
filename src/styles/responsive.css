@@ -156,4 +156,14 @@
         width: auto;
         font-family: "Karla";
     }
+    .product-features-header h2 {
+        width: 100%;
+        line-height: 131%;
+      }
+      .menu-wrapper.active {
+        width: 20rem;
+        top: 0;
+        right: 0;
+        border-radius: 0px 0px 0px 50px;
+      }
 }

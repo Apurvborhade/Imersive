@@ -9,9 +9,6 @@ import { storyblokEditable } from '@storyblok/react';
 gsap.registerPlugin(ScrollTrigger);
 
 
-const myLoader = ({ src, width, quality }) => {
-    return `https://images.unsplash.com/photo-${src}`
-}
 const Services = ({ blok }) => {
 
     useEffect(() => {
@@ -36,6 +33,15 @@ const Services = ({ blok }) => {
             color: "#fff",
             borderBottomColor: "#0003"
         })
+        gsap.to(".menu-wrapper", {
+            scrollTrigger: {
+                trigger: ".service-section",
+                start: "left center",
+                toggleActions: "play none none reverse"
+            },
+            backgroundColor: "#000",
+            color: "#fff",
+        })
         gsap.to(".menu-btn", {
             scrollTrigger: {
                 trigger: ".service-section",
@@ -47,29 +53,16 @@ const Services = ({ blok }) => {
     }, [])
     const slideDiv = useRef()
 
-    const tl = gsap.timeline()
-    const textAnimUp = (e) => {
-        console.log(e.target.parentElement)
-        tl.to(slideDiv.current,{
-            y:-100,
-            ease:"power1.out",
-            duration:1
-        })
-    }
-    const textAnimDown = (e) => {
-        tl.to(slideDiv.current,{
-            y:0,
-            ease:"power4.out",
-            duration:1
-        })
+    const serviceBtn = (e) => {
+        console.log(e)
     }
     return (
         <section {...storyblokEditable(blok)} className="service-section flex justify-center py-20" id="services">
             <div>
                 <p>solutions</p>
-                <div className='cursor-pointer service-option  border-t mt-3 pt-4 overflow-hidden' onMouseEnter={textAnimUp} onMouseLeave={() => textAnimDown()}>
+                <div className='cursor-pointer service-option  border-t mt-3 pt-4 overflow-hidden' >
                     <div className='service pt-3' ref={slideDiv}>
-                        <div className='lg:text-5xl text-2xl flex justify-between'  >
+                        <div className='lg:text-5xl text-2xl flex justify-between' onClick={serviceBtn} >
                             <p className='montserrat'>LANDING PAGE</p>
                             <p className='montserrat'></p>
                         </div>
@@ -78,7 +71,7 @@ const Services = ({ blok }) => {
                         </div>
                     </div>
                 </div>
-                <div className='cursor-pointer service-option  border-t mt-3 pt-4 overflow-hidden' onMouseEnter={ textAnimUp} onMouseLeave={() => textAnimDown()}>
+                <div className='cursor-pointer service-option  border-t mt-3 pt-4 overflow-hidden'>
                     <div className='service pt-3' ref={slideDiv}>
                         <div className='lg:text-5xl text-2xl flex justify-between'  >
                             <p className='montserrat'>LANDING PAGE</p>

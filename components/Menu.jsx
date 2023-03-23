@@ -1,6 +1,8 @@
 import gsap from 'gsap';
 import Link from 'next/link';
 import React, { useEffect, useRef } from 'react'
+import { BsInstagram,BsTwitter } from 'react-icons/bs'
+import { IoClose } from 'react-icons/io5'
 
 
 const Menu = ({ menuOpen, setMenuOpen }) => {
@@ -22,43 +24,23 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
         })
     }, [])
 
-   
+
 
 
     return (
-        <div className={`menu-wrapper  ${menuOpen ? 'active' : ''} `} ref={menu}>
-            <div className="close-btn flex justify-between">
-                <h1 className={`text-3xl p-10 `}>IMERSIVE</h1>
-                <button className="close-btn-menu p-10" onClick={() => setMenuOpen(false)}>CLOSE</button>
+        <div className={`menu-wrapper text-black flex justify-between items-end flex-col overflow-hidden  ${menuOpen ? 'active p-10 ' : ''} `} ref={menu}>
+            <button className="close-btn hover:rotate-90" onClick={() => {setMenuOpen(false)}}>
+                <IoClose size={40}/>
+            </button>
+            <div className="navigation mb-20 text-3xl flex flex-col gap-10">
+                <Link href={"/"} className="uppercase text-right">Portfolio</Link>
+                <Link href={"/"} className="uppercase text-right">ABOUT</Link>
+                <Link href={"/"} className="uppercase text-right">SERVICES</Link>
+                <Link href={"/"} className="uppercase text-right">CONTACT</Link>
             </div>
-
-            <div className="menu-body grid grid-cols-1 h-full">
-
-                <div className="menu-navigation flex flex-col justify-around h-full pb-20">
-                    <div className="lg:text-9xl text-4xl flex flex-col lg:gap-16 gap-10 lg:flex-1 lg:px-16 lg:p-32">
-                        <div className="menu-link" data-scroll="#about">
-
-                            <div className="flex flex-col gap-10" onClick={() => setMenuOpen(false)}>
-                                <Link className="text-center" href="/#about">ABOUT</Link>
-                                <Link className="text-center" href='/#about'>ABOUT</Link>
-                            </div>
-
-                        </div>
-                        <div className="menu-link" data-scroll="#footer">
-                            <div className="flex flex-col gap-10" onClick={() => setMenuOpen(false)}>
-                                <Link className="text-center" href='/contact'>CONTACT</Link>
-                                <Link className="text-center" href='/contact'>CONTACT</Link>
-                            </div>
-                        </div>
-                        <div className="menu-link" data-scroll="#about">
-                            <div className="flex flex-col gap-10" onClick={() => setMenuOpen(false)}>
-                                <Link className="text-center" href="/#projects">PROJECTS</Link>
-                                <Link className="text-center" href='/#projects'>PROJECTS</Link>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+            <div className="socials flex gap-5">
+                <BsTwitter size={25} />
+                <BsInstagram size={25}/>
             </div>
         </div>
     )

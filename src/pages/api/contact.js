@@ -3,10 +3,11 @@
 import { mailOptions, transporter } from "config/nodemailer";
 
 const CONTACT_MESSAGE_FIELDS = {
-  name: "Email",
-  company: "Company",
+  firstname: "First Name",
+  lastname: "Last Name",
   email: "Email",
-  phone: "Phone"
+  phone: "Phone",
+  company:"Company"
 }
 
 const generateEmailContent = (data) => {
@@ -27,7 +28,7 @@ const generateEmailContent = (data) => {
 const handler = async (req, res) => {
   if (req.method === "POST") {
     const data = req.body;
-    if (!data.name || !data.email || !data.company || !data.phone) {
+    if (!data.firstname || !data.lastname || !data.email || !data.company || !data.phone) {
       return res.status(400).json({ message: 'Invalid data' })
     }
 
