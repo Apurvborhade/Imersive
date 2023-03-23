@@ -48,7 +48,7 @@ const Footer = () => {
     setContactDetails((prev) => ({
       ...prev,
       values: {
-        ...prev.values,
+      ...prev.values,
         [target.name]: target.value,
       }
     }))
@@ -141,22 +141,22 @@ const Footer = () => {
         <div className='border-r border-black/[.1] p-10'>
           <h3 className='poppins text-2xl font-semibold text-black/[0.8]'>Email</h3>
           <div className='mt-4 flex flex-col gap-2'>
-            <a href="/" className='poppins text-xl font-semibold text-black/[.3] hover:text-black/[1] transition-all'>hello@imersive.com</a>
+            <Link href="/" className='poppins text-xl font-semibold text-black/[.3] hover:text-black/[1] transition-all'>hello@imersive.com</Link>
           </div>
         </div>
         <div className='border-r border-black/[.1] p-10'>
           <h3 className='poppins text-2xl font-semibold text-black/[0.8]'>Socials</h3>
           <div className='mt-4 flex flex-col gap-2'>
-            <a href="/" className='poppins text-xl font-semibold text-black/[.3] hover:text-black/[1] transition-all'>Instagram</a>
-            <a href="/" className='poppins text-xl font-semibold text-black/[.3] hover:text-black/[1] transition-all'>Twitter</a>
+            <Link href="/" className='poppins text-xl font-semibold text-black/[.3] hover:text-black/[1] transition-all'>Instagram</Link>
+            <Link href="/" className='poppins text-xl font-semibold text-black/[.3] hover:text-black/[1] transition-all'>Twitter</Link>
           </div>
         </div>
         <div className='border-r border-black/[.1] p-10'>
           <h3 className='poppins text-2xl font-semibold text-black/[0.8]'>Sitemap</h3>
           <div className='mt-4 flex flex-col gap-2'>
-            <a href="/" className='poppins text-xl font-semibold text-black/[.3] hover:text-black/[1] transition-all'>Services</a>
-            <a href="/" className='poppins text-xl font-semibold text-black/[.3] hover:text-black/[1] transition-all'>Works</a>
-            <a href="/" className='poppins text-xl font-semibold text-black/[.3] hover:text-black/[1] transition-all'>About</a>
+            <Link href="/" className='poppins text-xl font-semibold text-black/[.3] hover:text-black/[1] transition-all'>Services</Link>
+            <Link href="/" className='poppins text-xl font-semibold text-black/[.3] hover:text-black/[1] transition-all'>Works</Link>
+            <Link href="/" className='poppins text-xl font-semibold text-black/[.3] hover:text-black/[1] transition-all'>About</Link>
           </div>
         </div>
       </div>
