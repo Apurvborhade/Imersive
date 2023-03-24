@@ -15,17 +15,6 @@ const Team = ({ blok }) => {
     // Extract the "members" array from the "blok" object passed as a prop
     const teamMembers = blok.members;
     
-    // Define a function to add a CSS class to the cursor element
-    const cursorBlendOff = (e) => {
-        const cursor = document.querySelector(".cursor");
-        cursor.classList.add("blendoff")
-    }
-    
-    // Define a function to remove a CSS class from the cursor element
-    const cursorBlendOn = (e) => {
-        const cursor = document.querySelector(".cursor");
-        cursor.classList.remove("blendoff")
-    }
     
     // Render the team section with editable content
     return (
@@ -46,13 +35,12 @@ const Team = ({ blok }) => {
                             <div className='image-wrapper rounded-lg overflow-hidden'>
                                 {/* Render the member's profile picture using the Next.js Image component */}
                                 <Image
-                                    onMouseMove={cursorBlendOff} // Add event listener to add a CSS class to the cursor element
-                                    onMouseLeave={cursorBlendOn} // Add event listener to remove a CSS class from the cursor element
                                     loader={myLoader} // Set the custom loader function to fetch the image
                                     src={member.imagesrc} // Set the URL of the image
                                     alt="Smart Contract Development"
                                     width={500}
                                     height={500}
+                                    loading="lazy"
                                 />
                             </div>
                             <div className='mt-5'>

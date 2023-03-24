@@ -20,12 +20,14 @@ button {
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.slider-container::-webkit-scrollbar {
   display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
-body {
+body,
+.slider-container {
   -ms-overflow-style: none;
   /* IE and Edge */
   scrollbar-width: none;
@@ -71,6 +73,7 @@ header {
   height: 40rem;
   opacity: 1;
 }
+
 /* MENU */
 
 
@@ -159,64 +162,23 @@ header {
   max-width: 700px;
 }
 
-.curve-vector {
-  width: 80vw;
-  min-height: 400px;
-  border-radius: 50%;
-  position: absolute;
-  top: -10rem;
-  border: 1px solid #fff4;
-}
+
 
 .services-landing-wrapper {
   min-height: 100vh;
 }
 
-.curve-vector::before {
-  content: "";
-  width: 80vw;
-  min-height: 400px;
-  border-radius: 50%;
-  position: absolute;
-  left: -51px;
-  border: 1px solid #fff4;
-}
 
-.service-section,
+
 .services-body,
 .section-process,
 .process-roadmap-wrapper {
   min-height: 100vh;
 }
 
-.layout-circle {
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  border: 1px solid #fff3;
-  top: -120%;
-  left: 0%;
-}
 
-.layout-circle::before {
-  content: "";
-  position: absolute;
-  min-width: 600px;
-  min-height: 600px;
-  border-radius: 50%;
-  border: 1px solid #fff3;
-  left: 1%;
-}
 
-.layout-circle::after {
-  content: "";
-  position: absolute;
-  min-width: 600px;
-  min-height: 600px;
-  border-radius: 50%;
-  border: 1px solid #fff3;
-  left: -2%;
-}
+
 
 .services-landing-wrapper {
   min-width: 100vw;
@@ -279,10 +241,11 @@ header {
 
 /* ABOUT */
 .inner-slider img {
- min-width: 700px;
- height: 350px;
- object-fit: cover;
+  min-width: 700px;
+  height: 350px;
+  object-fit: cover;
 }
+
 .card {
   height: 300px;
   width: 400px;
@@ -302,7 +265,7 @@ header {
   height: 350px;
   position: relative;
   left: 0%;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .inner-slider {
@@ -323,14 +286,25 @@ header {
 /* ABOUT */
 /* SERVICES */
 
-.service-option {
-  width: 90%;
-  max-height: 100px;
+
+
+.service-detail {
+  position: relative;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  will-change: height;
+  transition: opacity .3s ease, max-height .3s ease, visibility 0s .3s;
+  backface-visibility: hidden;
 }
 
-
-
-
+.service-detail.is-visible {
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease, max-height .5s ease, visibility 0s;
+}
 
 
 
@@ -369,22 +343,9 @@ footer {
   color: #000;
 }
 
-.footer-cta {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
 
 
-.contact-mail {
-  font-family: "Poppins";
-}
 
-.close-btn-menu {
-  font-family: "Poppins";
-}
 .close-btn {
   transition: all 0.3s ease-out;
 }
@@ -456,37 +417,6 @@ footer {
   height: 100%;
 }
 
-.cursor {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  transform: translateX(100px);
-  background: #fff;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transition: all 0.1s ease-out, width 0.8s ease, height 0.8s ease;
-  transform-origin: center;
-  mix-blend-mode: difference;
-}
-
-.cursor.blendoff {
-  mix-blend-mode: normal;
-}
-
-
-
-.cursor.service {
-  width: 150px;
-  height: 150px;
-  mix-blend-mode: normal;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
 /* CONTACT */
 
 .contact-form-wrapper {
@@ -504,7 +434,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter:blur(1px) ;
+  backdrop-filter: blur(1px);
   z-index: 10;
 }
 

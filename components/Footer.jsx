@@ -48,7 +48,7 @@ const Footer = () => {
     setContactDetails((prev) => ({
       ...prev,
       values: {
-      ...prev.values,
+        ...prev.values,
         [target.name]: target.value,
       }
     }))
@@ -87,9 +87,9 @@ const Footer = () => {
   return (
     <footer className={`-z-10 border border-t lg:mt-20 `} id="#footer">
 
-      <div className="footer-contact-form flex flex-col justify-center items-start lg:px-40 px-5 lg:py-0 py-10 ">
+      <div id='contact' className="footer-contact-form flex flex-col justify-center items-start lg:px-40 px-5 lg:py-0 py-10 ">
 
-        <form onSubmit={onSubmit} class="lg:py-32 contact-form lg:p-10 w-full flex flex-col items-center lg:items-stretch gap-10 relative">
+        <form onSubmit={onSubmit} className="lg:py-32 contact-form lg:p-10 w-full flex flex-col items-center lg:items-stretch gap-10 relative">
 
           <h2 className='poppins text-4xl lg:text-6xl font-bold'>Get in touch</h2>{error && (
             <p className='text-red-700 text-xl text-start error-message'>{error}</p>
@@ -110,9 +110,9 @@ const Footer = () => {
               <input value={values.email} onChange={handleChange} placeholder='Email Address*' name="email" className="input-text poppins text-xl lg:text-2xl outline-none js-input border-b py-2 w-full focus:border-black" type="text" required />
             </div>
             <PhoneInput
-              type="tel" id='phone' placeholder="phone" name='phone'
+              type="tel" id='phone' placeholder="Phone*" name='phone'
               required
-              className='input-text col-span-full lg:col-auto poppins  outline-none js-input border-b py-2 w-full focus:border-black'
+              className='input-text col-span-full lg:col-auto poppins  outline-none js-input border-b py-2 w-full focus:border-black lg:text-2xl'
               value={phoneNumber}
               onChange={handlePhoneChange}
             />

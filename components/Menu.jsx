@@ -33,10 +33,10 @@ const Menu = ({ menuOpen, setMenuOpen }) => {
                 <IoClose size={40}/>
             </button>
             <div className="navigation mb-20 text-3xl flex flex-col gap-10">
-                <Link href={"/"} className="uppercase text-right">Portfolio</Link>
-                <Link href={"/"} className="uppercase text-right">ABOUT</Link>
-                <Link href={"/"} className="uppercase text-right">SERVICES</Link>
-                <Link href={"/"} className="uppercase text-right">CONTACT</Link>
+                <Link href={"/#projects"} className="uppercase text-right">projects</Link>
+                <Link href={"/#about"} className="uppercase text-right">ABOUT</Link>
+                <Link href={"/#services"} className="uppercase text-right">SERVICES</Link>
+                <Link href={"/#contact"} className="uppercase text-right">CONTACT</Link>
             </div>
             <div className="socials flex gap-5">
                 <BsTwitter size={25} />

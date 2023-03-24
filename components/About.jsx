@@ -56,8 +56,8 @@ const About = () => {
     }, [])
 
     return (
-        <div className='about-section'>
-            <div className='flex flex-col items-center py-20'>
+        <div className='about-section' id='about'>
+            <div className='flex flex-col items-center py-20 lg:py-40'>
                 <h3 className='text-center text-xl lg:text-3xl w-mid'>
                     Imersive is a Web2.5 E-commerce platform that leverages XR tools and the blockchain to provide
                     gamified retail spaces and easy to use sales solutions.
@@ -111,8 +111,8 @@ const About = () => {
                         <h2 className='uppercase poppins text-4xl'>Explore our spaces</h2>
                         <p className='text-white/[0.8] pr-10 lg:pr-0 lg:w-mid mt-5'>Step into the world of the metaverse with our stunning 3D spaces that help brands to showcase their products like never before. Our team has created virtual stores, art galleries, showrooms, and more, providing a unique and immersive experience that&apos;s sure to captivate your audience.</p>
                     </div>
-                    <div className='slider-container relative mt-10'>
-                        <div className='inner-slider'>
+                    <div className='slider-container relative mt-10 overflow-scroll'>
+                        <div className='inner-slider '>
                             <div className='card'></div>
                             <div className='card'></div>
                             <div className='card'></div>
@@ -128,19 +128,15 @@ const About = () => {
                     <h2 className='lg:text-5xl text-2xl poppins'>Discover the compelling reasons why retailers should choose Us</h2>
                 </div>
                 <div className='product-features-body grid lg:grid-cols-9 gap-2 mt-10'>
-                    <div className="feature-card  flex flex-col justify-center items-start col-span-3 border border-2 p-10 rounded-lg">
+                    <div className="feature-card  flex flex-col justify-center items-start col-span-3 border-2 p-10 rounded-lg">
                         <h3 className='text-4xl'>Easy-to-use interface</h3>
                         <p className='mt-2'>The product has a simple drag-and-drop interface that lets you create your virtual store with ease, without any coding skills.</p>
                     </div>
-                    <div className="feature-card  flex flex-col justify-center items-start col-span-3 border border-2 p-10 rounded-lg">
+                    <div className="feature-card  flex flex-col justify-center items-start col-span-3 border-2 p-10 rounded-lg">
                         <h3 className='text-4xl'>Easy-to-use interface</h3>
                         <p className='mt-2'>The product has a simple drag-and-drop interface that lets you create your virtual store with ease, without any coding skills.</p>
                     </div>
-                    <div className="feature-card  flex flex-col justify-center items-start col-span-3 border border-2 p-10 rounded-lg">
-                        <h3 className='text-4xl'>Easy-to-use interface</h3>
-                        <p className='mt-2'>The product has a simple drag-and-drop interface that lets you create your virtual store with ease, without any coding skills.</p>
-                    </div>
-                    <div className="feature-card mix-blend-difference flex flex-col justify-center items-start col-span-2 rounded-lg p-10 bg-white text-black">
+                    <div className="feature-card  flex flex-col justify-center items-start col-span-3 border-2 p-10 rounded-lg">
                         <h3 className='text-4xl'>Easy-to-use interface</h3>
                         <p className='mt-2'>The product has a simple drag-and-drop interface that lets you create your virtual store with ease, without any coding skills.</p>
                     </div>
@@ -148,7 +144,11 @@ const About = () => {
                         <h3 className='text-4xl'>Easy-to-use interface</h3>
                         <p className='mt-2'>The product has a simple drag-and-drop interface that lets you create your virtual store with ease, without any coding skills.</p>
                     </div>
-                    <div className="feature-card flex flex-col justify-center items-start col-span-3 border border-2 p-10 rounded-lg">
+                    <div className="feature-card mix-blend-difference flex flex-col justify-center items-start col-span-2 rounded-lg p-10 bg-white text-black">
+                        <h3 className='text-4xl'>Easy-to-use interface</h3>
+                        <p className='mt-2'>The product has a simple drag-and-drop interface that lets you create your virtual store with ease, without any coding skills.</p>
+                    </div>
+                    <div className="feature-card flex flex-col justify-center items-start col-span-3  border-2 p-10 rounded-lg">
                         <h3 className='text-4xl'>Easy-to-use interface</h3>
                         <p className='mt-2'>The product has a simple drag-and-drop interface that lets you create your virtual store with ease, without any coding skills.</p>
                     </div>
