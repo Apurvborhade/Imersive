@@ -82,7 +82,7 @@ const Services = ({ blok }) => {
                             <p className='montserrat font-medium '>BLOCK CHAIN DEVELOPMENT</p>
                             <RiArrowDownSLine size={40} className="pointer-events-none" />
                         </div>
-                        <div className='lg:text-3xl text-xl flex justify-between service-detail ' >
+                        <div className='lg:text-3xl text-xl flex justify-between service-detail' >
                             <p className='poppins lg:w-mid'>A corporate and marine travel online platform that brings travel coordinators, travelers and travel advisors together.</p>
                         </div>
                     </div>

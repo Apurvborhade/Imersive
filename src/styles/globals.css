@@ -297,6 +297,7 @@ header {
   will-change: height;
   transition: opacity .3s ease, max-height .3s ease, visibility 0s .3s;
   backface-visibility: hidden;
+  width: 80%;
 }
 
 .service-detail.is-visible {
@@ -452,7 +453,7 @@ footer {
   to {
     transform: rotate(360deg);
   }
-}
+} 
 
 
 /* PROJECTS */
