@@ -109,7 +109,7 @@ const About = ({ blok }) => {
                 </div>
                 <div className='product-features-body grid lg:grid-cols-9 gap-2 mt-10'>
                     {blok.productFeatures.map((card) => (
-                        <div className={card.outlined ? `feature-card flex flex-col justify-center items-start col-span-${card.cardSize} border-2 p-10 rounded-lg` : `feature-card mix-blend-difference flex flex-col justify-center items-start col-span-${card.cardSize} rounded-lg p-10 bg-white text-black`}>
+                        <div key={card._uid} className={card.outlined ? `feature-card flex flex-col justify-center items-start col-span-${card.cardSize} border-2 p-10 rounded-lg` : `feature-card mix-blend-difference flex flex-col justify-center items-start col-span-${card.cardSize} rounded-lg p-10 bg-white text-black`}>
                             <h3 className='text-4xl'>{card.title}</h3>
                             <p className='mt-2'>{card.description}</p>
                         </div>

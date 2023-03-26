@@ -78,7 +78,7 @@ const Services = ({ blok }) => {
                 <p className='text-xl'>solutions</p>
 
                 {blok.services.map((service) => (
-                    <div className='cursor-pointer service-option  mt-3 pt-4  border-t  overflow-hidden' >
+                    <div className='cursor-pointer service-option  mt-3 pt-4  border-t  overflow-hidden' key={service._uid}>
                         <div className='service pt-3 w-full' >
                             <div className='lg:text-5xl text-2xl flex justify-between items-center service-trigger pb-4' ref={slideDiv} onClick={serviceBtn} >
                                 <p className='montserrat font-medium '>BLOCK CHAIN DEVELOPMENT</p>
