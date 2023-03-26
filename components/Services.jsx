@@ -76,50 +76,20 @@ const Services = ({ blok }) => {
         <section {...storyblokEditable(blok)} className="service-section py-40 flex justify-center px-10" id="services">
             <div>
                 <p className='text-xl'>solutions</p>
-                <div className='cursor-pointer service-option  mt-3 pt-4  border-t  overflow-hidden' >
-                    <div className='service pt-3 w-full' >
-                        <div className='lg:text-5xl text-2xl flex justify-between items-center service-trigger pb-4' ref={slideDiv} onClick={serviceBtn} >
-                            <p className='montserrat font-medium '>BLOCK CHAIN DEVELOPMENT</p>
-                            <RiArrowDownSLine size={40} className="pointer-events-none" />
-                        </div>
-                        <div className='lg:text-3xl text-xl flex justify-between service-detail' >
-                            <p className='poppins lg:w-mid'>A corporate and marine travel online platform that brings travel coordinators, travelers and travel advisors together.</p>
-                        </div>
-                    </div>
-                </div>
-                <div className='cursor-pointer service-option  mt-3 pt-4  border-t  overflow-hidden' >
-                    <div className='service pt-3 w-full' >
-                        <div className='lg:text-5xl text-2xl flex justify-between items-center service-trigger pb-4' ref={slideDiv} onClick={serviceBtn} >
-                            <p className='montserrat font-medium '>AR VR DEVELOPMENT</p>
-                            <RiArrowDownSLine size={40} className="pointer-events-none" />
-                        </div>
-                        <div className='lg:text-3xl text-xl flex justify-between service-detail ' >
-                            <p className='poppins lg:w-mid'>A corporate and marine travel online platform that brings travel coordinators, travelers and travel advisors together.</p>
+
+                {blok.services.map((service) => (
+                    <div className='cursor-pointer service-option  mt-3 pt-4  border-t  overflow-hidden' >
+                        <div className='service pt-3 w-full' >
+                            <div className='lg:text-5xl text-2xl flex justify-between items-center service-trigger pb-4' ref={slideDiv} onClick={serviceBtn} >
+                                <p className='montserrat font-medium '>BLOCK CHAIN DEVELOPMENT</p>
+                                <RiArrowDownSLine size={40} className="pointer-events-none" />
+                            </div>
+                            <div className='lg:text-3xl text-xl flex justify-between service-detail' >
+                                <p className='poppins lg:w-mid'>A corporate and marine travel online platform that brings travel coordinators, travelers and travel advisors together.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className='cursor-pointer service-option  mt-3 pt-4  border-t  overflow-hidden' >
-                    <div className='service pt-3 w-full' >
-                        <div className='lg:text-5xl text-2xl flex justify-between items-center service-trigger pb-4' ref={slideDiv} onClick={serviceBtn} >
-                            <p className='montserrat font-medium '>METAVERSE SPACES</p>
-                            <RiArrowDownSLine size={40} className="pointer-events-none" />
-                        </div>
-                        <div className='lg:text-3xl text-xl flex justify-between service-detail ' >
-                            <p className='poppins lg:w-mid'>A corporate and marine travel online platform that brings travel coordinators, travelers and travel advisors together.</p>
-                        </div>
-                    </div>
-                </div>
-                <div className='cursor-pointer service-option  mt-3 pt-4  border-t  overflow-hidden' >
-                    <div className='service pt-3 w-full' >
-                        <div className='lg:text-5xl text-2xl flex justify-between items-center service-trigger pb-4' ref={slideDiv} onClick={serviceBtn} >
-                            <p className='montserrat font-medium '>BLOCK CHAIN DEVELOPMENT</p>
-                            <RiArrowDownSLine size={40} className="pointer-events-none" />
-                        </div>
-                        <div className='lg:text-3xl text-xl flex justify-between service-detail ' >
-                            <p className='poppins lg:w-mid'>A corporate and marine travel online platform that brings travel coordinators, travelers and travel advisors together.</p>
-                        </div>
-                    </div>
-                </div>
+                ))}
             </div>
         </section>
 
