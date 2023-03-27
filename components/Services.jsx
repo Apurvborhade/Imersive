@@ -75,7 +75,7 @@ const Services = ({ blok }) => {
     return (
         <section {...storyblokEditable(blok)} className="service-section py-40 flex justify-center px-10" id="services">
             <div>
-                <p className='text-xl'>solutions</p>
+                <p className='text-xl'>solutios</p>
 
                 {blok.services.map((service) => (
                     <div className='cursor-pointer service-option  mt-3 pt-4  border-t  overflow-hidden' key={service._uid}>
