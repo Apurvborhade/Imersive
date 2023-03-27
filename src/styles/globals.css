@@ -240,6 +240,9 @@ header {
 
 
 /* ABOUT */
+.carousel-drag-cursor {
+  transition: opacity 1s ease;
+}
 .inner-slider {
   height: 100%;
 }

@@ -81,11 +81,11 @@ const Services = ({ blok }) => {
                     <div className='cursor-pointer service-option  mt-3 pt-4  border-t  overflow-hidden' key={service._uid}>
                         <div className='service pt-3 w-full' >
                             <div className='lg:text-5xl text-2xl flex justify-between items-center service-trigger pb-4' ref={slideDiv} onClick={serviceBtn} >
-                                <p className='montserrat font-medium '>BLOCK CHAIN DEVELOPMENT</p>
+                                <p className='montserrat font-medium '>{service.title}</p>
                                 <RiArrowDownSLine size={40} className="pointer-events-none" />
                             </div>
                             <div className='lg:text-3xl text-xl flex justify-between service-detail' >
-                                <p className='poppins lg:w-mid'>A corporate and marine travel online platform that brings travel coordinators, travelers and travel advisors together.</p>
+                                <p className='poppins lg:w-mid'>{service.description}</p>
                             </div>
                         </div>
                     </div>

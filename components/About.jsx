@@ -1,5 +1,6 @@
+import { storyblokEditable } from '@storyblok/react'
 import Image from 'next/image'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { MdTouchApp } from 'react-icons/md'
 
@@ -9,7 +10,7 @@ const imageLoader = ({ src }) => {
 
 
 const About = ({ blok }) => {
-    console.log(blok)
+    const [icon, setIcon] = useState('')
     useEffect(() => {
         let sliderContainer = document.querySelector('.slider-container');
         let innerSlider = document.querySelector('.inner-slider');
@@ -21,7 +22,6 @@ const About = ({ blok }) => {
         sliderContainer.addEventListener("mousedown", (e) => {
             pressed = true;
             startX = e.offsetX - innerSlider.offsetLeft;
-            console.log(startX)
             sliderContainer.style.cursor = "grabbing";
         });
 
@@ -59,8 +59,9 @@ const About = ({ blok }) => {
 
     }, [])
 
+   
     return (
-        <div className='about-section' id='about'>
+        <div className='about-section' id='about' {...storyblokEditable(blok)}>
             <div className='flex flex-col items-center py-20 lg:py-40'>
                 <h3 className='text-center text-xl lg:text-3xl w-mid'>
                     {blok.productDescriptionTitle}
@@ -68,6 +69,7 @@ const About = ({ blok }) => {
                 <div className='grid grid-cols-1 lg:grid-cols-2 px-10 lg:px-44 lg:gap-x-40 mt-20 gap-y-20 lg:mt-32'>
                     {blok.productDescription.map((card) => (
                         <div className='product-desc-card flex' key={card._uid}>
+                            
                             <div className='desc-icon mr-5'>
                                 <MdTouchApp size={50} />
                             </div>
@@ -114,30 +116,7 @@ const About = ({ blok }) => {
                             <p className='mt-2'>{card.description}</p>
                         </div>
                     ))}
-                    {/* <div className="feature-card  flex flex-col justify-center items-start col-span-3 border-2 p-10 rounded-lg">
-                        <h3 className='text-4xl'>Easy-to-use interface</h3>
-                        <p className='mt-2'>The product has a simple drag-and-drop interface that lets you create your virtual store with ease, without any coding skills.</p>
-                    </div>
-                    <div className="feature-card  flex flex-col justify-center items-start col-span-3 border-2 p-10 rounded-lg">
-                        <h3 className='text-4xl'>Easy-to-use interface</h3>
-                        <p className='mt-2'>The product has a simple drag-and-drop interface that lets you create your virtual store with ease, without any coding skills.</p>
-                    </div>
-                    <div className="feature-card mix-blend-difference flex flex-col justify-center items-start col-span-2 rounded-lg p-10 bg-white text-black">
-                        <h3 className='text-4xl'>Easy-to-use interface</h3>
-                        <p className='mt-2'>The product has a simple drag-and-drop interface that lets you create your virtual store with ease, without any coding skills.</p>
-                    </div>
-                    <div className="feature-card mix-blend-difference flex flex-col justify-center items-start col-span-2 rounded-lg p-10 bg-white text-black">
-                        <h3 className='text-4xl'>Easy-to-use interface</h3>
-                        <p className='mt-2'>The product has a simple drag-and-drop interface that lets you create your virtual store with ease, without any coding skills.</p>
-                    </div>
-                    <div className="feature-card flex flex-col justify-center items-start col-span-3  border-2 p-10 rounded-lg">
-                        <h3 className='text-4xl'>Easy-to-use interface</h3>
-                        <p className='mt-2'>The product has a simple drag-and-drop interface that lets you create your virtual store with ease, without any coding skills.</p>
-                    </div>
-                    <div className="feature-card mix-blend-difference flex flex-col justify-center items-start col-span-2 rounded-lg p-10 bg-white text-black">
-                        <h3 className='text-4xl'>Easy-to-use interface</h3>
-                        <p className='mt-2'>The product has a simple drag-and-drop interface that lets you create your virtual store with ease, without any coding skills.</p>
-                    </div> */}
+
                 </div>
             </div>
         </div>

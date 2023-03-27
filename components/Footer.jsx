@@ -44,7 +44,6 @@ const Footer = () => {
   };
   const { values, isLoading, isSuccess, error } = contactDetails;
   const handleChange = ({ target }) => {
-    console.log("hehe")
     setContactDetails((prev) => ({
       ...prev,
       values: {
@@ -52,7 +51,6 @@ const Footer = () => {
         [target.name]: target.value,
       }
     }))
-    console.log(contactDetails)
   }
 
   const onSubmit = async (e) => {
