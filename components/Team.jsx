@@ -24,7 +24,7 @@ const Team = ({ blok }) => {
                     <p className="section-title">OUR PEOPLE</p>
                     <p className="text-4xl my-5">{blok.headline}</p>
                     <Link href="/">
-                        <button className="join-team-btn slide-button light border px-10 py-3 border-black/[0.4]">{blok.buttontext}</button>
+                        <button className="join-team-btn slide-button-light border px-10 py-3 border-black/[0.4]">{blok.buttontext}</button>
                     </Link>
                 </div>
 

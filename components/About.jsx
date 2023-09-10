@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 
 import { MdTouchApp } from 'react-icons/md'
+import { TfiHandDrag } from 'react-icons/tfi'
 
 const imageLoader = ({ src }) => {
     return `https://a.storyblok.com/${src}`
@@ -10,7 +11,7 @@ const imageLoader = ({ src }) => {
 
 
 const About = ({ blok }) => {
-    const [icon, setIcon] = useState('')
+    const [dragInstruct, setDragInstruct] = useState(true)
     useEffect(() => {
         let sliderContainer = document.querySelector('.slider-container');
         let innerSlider = document.querySelector('.inner-slider');
@@ -32,6 +33,7 @@ const About = ({ blok }) => {
         sliderContainer.addEventListener("mouseup", () => {
             sliderContainer.style.cursor = "grab";
             pressed = false;
+            
         });
 
         const checkBoundary = () => {
@@ -53,13 +55,14 @@ const About = ({ blok }) => {
             x = e.offsetX;
 
             innerSlider.style.left = `${x - startX}px`;
+            setDragInstruct(false)
 
             checkBoundary();
         });
 
     }, [])
 
-   
+
     return (
         <div className='about-section' id='about' {...storyblokEditable(blok)}>
             <div className='flex flex-col items-center py-20 lg:py-40'>
@@ -69,7 +72,7 @@ const About = ({ blok }) => {
                 <div className='grid grid-cols-1 lg:grid-cols-2 px-10 lg:px-44 lg:gap-x-40 mt-20 gap-y-20 lg:mt-32'>
                     {blok.productDescription.map((card) => (
                         <div className='product-desc-card flex' key={card._uid}>
-                            
+
                             <div className='desc-icon mr-5'>
                                 <MdTouchApp size={50} />
                             </div>
@@ -82,7 +85,7 @@ const About = ({ blok }) => {
                 </div>
             </div>
             <div className='space-showcase py-10 mt-20'>
-                <div className='showcase-header lg:pl-20 pl-10'>
+                <div className='showcase-header relative lg:pl-20 pl-10 flex flex-col'>
                     <div>
                         <h2 className='uppercase poppins text-4xl'>{blok.spaceShowcaseTitle}</h2>
                         <p className='text-white/[0.8] pr-10 lg:pr-0 lg:w-mid mt-5'>{blok.spaceShowcaseDescription}</p>
@@ -103,6 +106,11 @@ const About = ({ blok }) => {
                             ))}
                         </div>
                     </div>
+                    {dragInstruct ? (
+                        <div className='ml-auto mt-10 absolute -bottom-10 right-0'>
+                            <TfiHandDrag size={60} className='drag-instruct' />
+                        </div>
+                    ) : null}
                 </div>
             </div>
             <div className='product-features lg:px-20 px-5 mt-32'>

@@ -9,18 +9,18 @@ const Header = ({ setMenuOpen }) => {
 
   const menuBtnHandler = () => {
     setMenuOpen(true)
-    gsap.from(".menu-link div", {
-      y: -200,
+    gsap.from(".menu-link", {
+      y: 20,
       opacity: 0,
-      duration: 1,
+      duration: 0.6,
       delay: .1,
-      stagger: 0.4
+      stagger: 0.2
     })
   }
   return (
     <header className="fixed z-10 left-0 top-0 bg-black w-full">
-      <div className="header-wrapper flex justify-between px-1">
-        <Link href={"/"} className="logo-container p-3 flex items-center gap-3 text-xl">
+      <div className="header-wrapper flex justify-between pl-1">
+        <Link href={"/"} className="logo-container p-3 flex items-center gap-3 text-xl hover:mr-10">
           <Image
             src={Logo}
             alt="Logo"
@@ -30,7 +30,7 @@ const Header = ({ setMenuOpen }) => {
           <h1>IMERSIVE</h1>
         </Link>
         <button className="menu-btn slide-button  border-l border-white/[0.3] px-10" onClick={menuBtnHandler}>
-          <p>
+          <p className=''>
             MENU
           </p>
         </button>

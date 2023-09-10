@@ -150,7 +150,7 @@ const Footer = () => {
           </div>
         </div>
         <div className='border-r border-black/[.1] p-10'>
-          <h3 className='poppins text-2xl font-semibold text-black/[0.8]'>Sitemap</h3>
+          <h3 className='poppins text-2xl font-semibold text-black/[0.8]'>Quick Links</h3>
           <div className='mt-4 flex flex-col gap-2'>
             <Link href="/" className='poppins text-xl font-semibold text-black/[.3] hover:text-black/[1] transition-all'>Services</Link>
             <Link href="/" className='poppins text-xl font-semibold text-black/[.3] hover:text-black/[1] transition-all'>Works</Link>

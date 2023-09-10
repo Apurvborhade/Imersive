@@ -15,10 +15,6 @@
   width: 70%;
 }
 
-button {
-  cursor: none;
-}
-
 /* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar,
 .slider-container::-webkit-scrollbar {
@@ -292,6 +288,21 @@ header {
   width: 60%;
   line-height: 131%;
 }
+.drag-instruct {
+  animation: drag 3s infinite ;
+}
+
+@keyframes drag {
+  0% {
+    transform: translateX(0);
+  }
+  70% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
 /* ABOUT */
 /* SERVICES */
@@ -346,6 +357,11 @@ header {
 }
 
 /* WORKS */
+.project-video {
+  height: 990px;
+   min-width: 900px;
+   object-fit: cover;
+}
 
 /* Footer */
 
@@ -366,10 +382,9 @@ footer {
 }
 
 .menu-link {
-  height: 140px;
-  overflow: hidden;
-  letter-spacing: 1.1rem;
+  transition: margin-right 0.2s ease;
 }
+
 
 .slide-button {
   position: relative;
@@ -399,32 +414,32 @@ footer {
   height: 100%;
 }
 
-.slide-button.light {
+.slide-button-light {
   position: relative;
   background: none;
-  color: #fff;
+  color: #000;
   overflow: hidden;
-  border-color: #fff;
+  border-color: #000;
   transition: all 0.3s ease;
 }
 
-.slide-button.light:before {
+.slide-button-light:before {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 0%;
-  background-color: #fff;
+  background-color: #000;
   transition: all 0.3s ease;
   z-index: -1;
 }
 
-.slide-button.light:hover {
-  color: black;
+.slide-button-light:hover {
+  color: #fff;
 }
 
-.slide-button.light:hover:before {
+.slide-button-light:hover:before {
   height: 100%;
 }
 
@@ -438,6 +453,9 @@ footer {
 }
 
 
+.PhoneInputCountrySelect {
+  font-size: 15px;
+}
 .loader {
   width: 100%;
   height: 100%;
@@ -475,9 +493,7 @@ footer {
   width: 50%;
 }
 
-.join-team-btn {
-  mix-blend-mode: difference;
-}
+
 
 /* Loader */
 .loading-screen {
